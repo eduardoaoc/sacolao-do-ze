@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
+body{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(15, 55, 235);
+}
+.background-video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+.box{
+    box-shadow: -3px 6px 6px black;
+    margin-top: 2%;
+    position: relative;
+    width: 390px;
+    height: 700px;
+    background: rgb(63, 61, 61);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.box::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 390px;
+    height: 700px;
+    background: linear-gradient(0deg, transparent, rgb(73, 70, 248), rgb(37, 22, 238));
+    animation: animate 6s linear infinite;
+    transform-origin: bottom right;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 390px;
+    height: 700px;
+    background: linear-gradient(0deg, transparent, rgb(73, 70, 248), rgb(37, 22, 238));
+    animation: animate 6s linear infinite;
+    transform-origin: bottom right;
+    animation-delay: -3s;
+}
+@keyframes animate{
+    0%
+    {transform: rotate(0deg);}
+    100%
+    {transform: rotate(360deg);}
+}
+.form{
+    position: absolute;
+    background: rgb(36, 36, 36);
+    border-radius: 8px;
+    z-index: 999;
+    inset: 2px;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form h1{
+    text-shadow: -2px 2px 1px black;
+    color: rgb(73, 70, 248);
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-family: 'Lobster';
+}
+.inputbox{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+.inputbox input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: black;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    z-index: 999;
+}
+.inputbox span{
+    position: absolute;
+    left: 0;
+    padding: 20px 10px 10px;
+    font-size: 1em;
+    color: grey;
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span
+{
+    color:rgb(37, 22, 238);
+    transform: translateX(0px) translateY(-34px);
+    font-size: 0.75em;
+}
+.inputbox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: rgb(73, 70, 248);
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 777;
+}
+.inputbox input:valid ~ i,
+.inputbox input:focus~ i{
+    height: 44px;
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+}
+.links a{
+    margin: 15px 0;
+    font-size: 0.75em;
+    color: grey;
+    text-decoration: none;
+}
+.links a:hover{
+    color:  rgb(37, 22, 238);
+}
+
+.btn-sub{
+    margin-left: 20%;
+    margin-bottom: 3px;
+    margin-top: 20px;
+    width: 60%;
+    padding: 16px 0px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #ffffff;
+    background: linear-gradient(rgb(73, 70, 248), rgb(73, 62, 226));
+    cursor: pointer;
+    box-shadow: -2px 4px 4px #000000;
+}
+
+.btn-sub:hover{
+    background: rgb(17, 0, 255);
+}

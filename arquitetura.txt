@@ -1,0 +1,14 @@
+Arquitetura projeto sacolão do zé
+
+*assets
+*Loja
+--admin
+--carrinho
+--clientes
+--produtos
+--pagamento
+--templates
+--admin
+--clientes
+--produtos
+--pagamento
