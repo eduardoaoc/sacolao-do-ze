@@ -1,4 +1,3 @@
-{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,17 +49,17 @@
                 <div class="video-content">
                     <video src="{{ url_for('static', filename='img/video.mp4') }}" autoplay muted loop></video>
                 </div>
-                <div class="text-1" data-aos="fade-right" data-aos-duration="1000">Olá, seja bem-vindo ao</div>
-                <div class="text-2" data-aos="fade-right" data-aos-duration="1000">Sacolão do <span>Zé</span></div>
-                <div class="text-3" data-aos="fade-right" data-aos-duration="1000">Qualidade & Confiança<span> você encontra aqui.</span></div>
+                <div class="text-1" >Olá, seja bem-vindo ao</div>
+                <div class="text-2" >Sacolão do <span>Zé</span></div>
+                <div class="text-3" >Qualidade & Confiança<span> você encontra aqui.</span></div>
             </div>
         </div>
     </section>
     <!--VERDURAS/LEGUMES-->
-        <div class="title-h1" id="legumes" href="#legumes">     
+    <div class="title-h1" id="legumes" href="#legumes" style="text-decoration: none;">     
             <h1>Verduras & legumes</h1>
         </div>
-        <div class="container" data-aos="fade-up">
+        <div class="container">
             <div class="card" >
                 <h1 class="title-product">Beterraba</h1>
                 <a href="{{url_for('index')}}">
@@ -97,7 +96,7 @@
                 </div>
             </div>
         </div>
-        <div class="container" data-aos="fade-up">
+        <div class="container" >
             <div class="card" >
                 <h1 class="title-product">Batata <br> R$5.99 (100g)</h1>
                 <a href="{{url_for('index')}}">
@@ -143,11 +142,11 @@
         </div>
         <!--FRUTAS-->
         <div class="title-h2" id="frutas" >            
-            <a href="#frutas">
+            <a href="#frutas" style="text-decoration: none;">
                 <h1>Frutas</h1>
             </a>
        </div>
-        <div class="container" data-aos="fade-up" >
+        <div class="container">
             <div class="card" >
                 <h1 class="title-product">Banana <br> R$5.99 (100)</h1>
                 <a href="{{url_for('index')}}">
@@ -187,7 +186,7 @@
             </div>
         </div>
         <!--teste-->
-        <div class="container" data-aos="fade-up" data-aos-duration="5000" >
+        <div class="container">
             <div class="card" >
                 <h1 class="title-product">Banana <br> R$5.99 (100)</h1>
                 <a href="{{url_for('index')}}">
@@ -276,15 +275,15 @@
             </div>
         </div>
         <footer>
-            <div class="footer-content">
-                <ul class="polices">
-                    <li><a href="#">Politica de Privacidade</a></li>
+            <div class="footer-content" >
+                <ul class="polices" >
+                    <li><a href="#" >Politica de Privacidade</a></li>
                     <li><a href="#">Politica de Devolução</a></li>
                     <li><a href="#">Politica de Entrega</a></li>
                 </ul>
                 <br>
                 <br>
-                <hr size="3" width="30%" color='#0099ff'>
+                <hr size="3" width="30%" color='#83BD75'>
                 <br>
                 <h3>Sacolão do Zé | Desde 2006.</h3>
                 <p> Em todos os lares do Brasil.</p>
@@ -300,12 +299,5 @@
         </footer>
     <script src="static/js/script.js"></script>
     <script src="static/js/mobile.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration:600
-        });
-    </script>
 </body>
 </html>
-{% endblock content %}

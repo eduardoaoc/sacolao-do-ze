@@ -5,7 +5,6 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-
 }
 
 body{
@@ -14,16 +13,16 @@ body{
 }
 
 /*NAV-BAR-INICIO*/
-a{
+.navbar a{
     font-size: 20px;
     color: rgb(255, 255, 255);
     text-decoration: none;
     transition: 0.3s;
 }
-a:hover{
+.navbar a:hover{
     font: bold;
     opacity: 0.7;
-    color: #0099ff;
+    color: rgb(71, 189, 73);
 }
 ul{
     list-style: none;
@@ -33,7 +32,7 @@ ul{
 .navbar{
     text-shadow: -2px 3px 3px rgb(0, 0, 0);
     font-family: 'Inter', sans-serif;
-    background: linear-gradient( rgb(73, 70, 248), rgb(37, 22, 238));
+    background: #4E944F;
     position: fixed;
     height: 10vh;
     display: flex;
@@ -91,12 +90,9 @@ ul{
 }
 .home .home-content .text-2{
     text-shadow: -1px 2px 2px rgb(54, 54, 54);
-    color: rgb(4, 0, 221);
+    color: rgb(71, 189, 73);
     font-size: 75px;
     font-weight: 500;
-}
-.home .home-content .text-2:hover{
-    color: #1900ff;
 }
 .home .home-content .text-3{
     text-shadow: -2px 3px 3px rgb(54, 54, 54);
@@ -133,31 +129,27 @@ section img{
 
 /*TITULOS DAS PÁGINAS*/
 .title-h1 h1{
+    text-decoration: none;
     text-shadow: 0px 3px 3px #041b04;
     margin-top: 50px;
     margin-bottom: 90px;
-    margin-left: 40%;
+    margin-left: 35%;
     font-family: 'Lobster';
     font-size: 55px;
-    color: rgb(73, 70, 248);
+    color: rgb(71, 189, 73);
 }
-.title-h1 h1:hover{
-    color: rgb(37, 22, 238);
-    cursor: pointer;
-}
+
 .title-h2 h1{
+    text-decoration: none;
     text-shadow: 0px 3px 3px #041b04;
     margin-top: 50px;
     margin-bottom: 90px;
     margin-left: 45%;
     font-family: 'Lobster';
     font-size: 55px;
-    color: rgb(73, 70, 248);
+    color: rgb(71, 189, 73);
 }
-.title-h2 h1:hover{
-    color: rgb(37, 22, 238);
-    cursor: pointer;
-}
+
 
 /*BANNER IMAGE*/
 .banner-content{
@@ -223,22 +215,21 @@ section img{
     font-weight: 500;
     letter-spacing: 2px;
     color: #ffffff;
-    background: linear-gradient(rgb(73, 70, 248), rgb(73, 62, 226));
+    background: rgb(87, 170, 89);
     cursor: pointer;
     box-shadow: -1px 3px 3px #000000;
  }
 .btn-add:hover{
-    background: rgb(17, 0, 255);
+    background: rgb(41, 153, 43);
 }
 
 
 /*CONTATO*/
 .containe{
-    
     font-family: 'Inter', sans-serif;
     color: #fff;
     width: 100%;
-    background: linear-gradient( rgb(73, 62, 226), rgb(28, 26, 151));
+    background: rgb(78, 148, 79);
     padding: 40px 60px 30px 40px;
     box-shadow: 0 5px 10px rgb(0,0,0, 0.2);
 }
@@ -269,7 +260,8 @@ section img{
     right: -15px;
     top: 50%;
     transform: translateY(-50%);
-    background: rgb(0, 132, 255);
+    background: rgb(71, 189, 73);
+
 }
 .contet .left-side .details{
     margin: 14px;
@@ -277,11 +269,11 @@ section img{
 }
 .contet .left-side .details i{
     font-size: 35px; 
-    color: #0099ff; 
+    color: rgb(71, 189, 73);
     margin-bottom: 10px;
 }
 .contet .left-side .details i:hover{
-    color: #1900ff;
+    color: rgb(7, 255, 11);
 
 }
 .contet .left-side .details .topic{
@@ -301,8 +293,7 @@ section img{
 .contet .right-side .topic-box{
     font-size: 30px;
     font-weight: 600;
-    color: rgb(0, 132, 255);
-
+    color: rgb(71, 189, 73);
 } 
 .right-side .input-box{
     height: 50px;
@@ -333,12 +324,19 @@ footer{
     bottom: 0;
     left: 0;
     right: 0;
-    background: #040d1b;
+    background: rgb(43, 88, 44);
     height: auto;
     width: 100;
     font-family: 'Familjen Grotesk', sans-serif;
     padding-top: 40px;
     color: #fff;
+}
+.footer-content a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.footer-content a:hover{
+    color: rgb(27, 192, 30);
 }
 
 .footer-content{
@@ -364,8 +362,8 @@ footer{
     font-size: 20px;
 }
 
-.footer-bottom{
-    background: #040d1b;
+.footer-bottom{   
+    background: rgb(43, 88, 44);
     width: 100vw;
     padding: 20px 0;
     text-align: center;
@@ -377,7 +375,12 @@ footer{
     text-transform: capitalize;
 }
 .footer-bottom a{
+    color: #ffffff;
+    text-decoration: none;
     font-size: 20px;
+}
+.footer-bottom a:hover{
+    color: rgb(27, 192, 30);
 }
 
 .polices li{
@@ -401,4 +404,116 @@ footer{
 .socials a i{
     font-size: 3rem;
     transition: color .2s ease;
+}
+
+/*TABELA ADMIN*/
+.content-table{
+    font-family: 'Inter', sans-serif;
+    position:absolute;
+    top:15%;
+    left:250px;
+    border-collapse: collapse;
+    margin: 5px 0;
+    font-size: 0.9em;
+    min-width: 1000px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.content-table thead tr{
+    font-size: 20px;
+    background: rgb(78, 148, 79);
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+.content-table td{
+    font-size: 18px;
+}
+.content-table th,
+.content-table td{
+    padding: 20px 15px;
+}
+.content-table tbody tr{
+    border-bottom: 1px solid rgba(201, 201, 201, 0.867);
+}
+.content-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+.content-table tbody tr:last-of-type{
+    border-bottom: 2px solid rgb(71, 189, 73);
+}
+
+.btn-edit{
+    margin-bottom: 3px;
+    margin-top: 10px;
+    width: 20%;
+    padding: 10px 6px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    background: rgb(10, 135, 173);
+    cursor: pointer;
+    box-shadow: -1px 3px 3px #888787;
+    text-decoration: none;
+}
+.btn-edit:hover{
+    background: rgb(10, 165, 212);
+}
+.btn-delete{
+    margin-bottom: 3px;
+    margin-top: 10px;
+    width: 20%;
+    padding: 10px 6px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    background: rgb(182, 1, 1);
+    cursor: pointer;
+    box-shadow: -1px 3px 3px #888787;
+    text-decoration: none;
+}
+
+.btn-delete:hover{
+    background: rgb(209, 3, 3);
+}
+
+/*CARRINHO LIMPO*/
+.row img{
+    margin-top: 10%;
+    width: 300px;
+    height: 300px;
+    margin-left: 40%;
+}
+.row h1{
+    letter-spacing: 0.02em;
+    color: #979797;
+    margin-top: 3%;
+    margin-left: 41%;
+    font-family: 'Lobster';
+}
+.back-shop{
+    margin-left: 44%;
+    margin-bottom: 3px;
+    margin-top: 20px;
+    width: 15%;
+    padding: 16px 0px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #ffffff;
+    background: rgb(87, 170, 89);
+    cursor: pointer;
+    box-shadow: -1px 3px 3px #000000;
+ }
+ .back-shop:hover{
+    background: rgb(41, 153, 43);
 }

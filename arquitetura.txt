@@ -12,3 +12,8 @@ Arquitetura projeto sacolão do zé
 --clientes
 --produtos
 --pagamento
+
+
+**
+dropdown in navbar
+Categoria example= frutas, verduras, legumes ....
