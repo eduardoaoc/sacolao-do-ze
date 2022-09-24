@@ -1,0 +1,36 @@
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/addcat.css' ) }}">
+    <script src="https://kit.fontawesome.com/2747ec91e0.js"></script>
+    <link rel="shortcut icon" href="static/img/logo2.png" type="image/x-icon">
+    <title>
+        Sacolão do Zé | Desde 2006
+    </title>
+</head>
+<body>
+    <div class="box">       
+        <div class="form">
+            {% if updatecat %}
+            <h1>Atualizar Categoria</h1>
+            <form action="" method="POST">
+                <div class="inputbox">
+                    <input type="text" name="category" id="form-control" value="{{updatecat.name}}">
+                    <span>Categoria</span>
+                    <i></i>
+                </div>
+                <button class="btn-sub" type="submit">Atualizar</button>              
+                <a class="btn-cancel"  href="{{url_for('category')}}" style="text-decoration: none;">Cancelar</a>              
+            </form>
+            {% endif %}
+        </div>
+        {% include '_messages.html' %}
+    </div>
+</body>
+</html>
+{% endblock content %}

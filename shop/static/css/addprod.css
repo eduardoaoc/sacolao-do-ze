@@ -55,6 +55,7 @@ body{
     {transform: rotate(360deg);}
 }
 .form{
+    color: #ffffff;
     flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
@@ -81,15 +82,70 @@ body{
     margin-top: 15px;
     color: #ffffff;
 }
+.inputbox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: rgb(131, 189, 117);
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 777;
+}
+.inputbox .form-control:valid ~ i,
+.inputbox .form-control:focus~ i{
+    height: 44px;
+}
+.inputbox select{
+    background: rgb(36, 36, 36);
+    height: 20%;
+    color: #ffffff;
+}
+.name .form-control{
+    background: rgb(36, 36, 36);
+    width: 300px;
+    height: 30px;
+    color: white; 
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+.stock .form-control{
+    background: rgb(36, 36, 36);
+    width: 300px;
+    height: 30px;
+    color: white; 
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+.price .form-control{
+    background: rgb(36, 36, 36);
+    width: 300px;
+    height: 30px;
+    color: white; 
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+.desc .form-control{
+    background: rgb(36, 36, 36);
+    color: white; 
+    min-width: 297px;
+    resize: none;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
 .btn-sub{
     margin-top: 10px;
     width: 120px;
-    padding: 16px 0px;
+    padding: 10px 0px;
     border: none;
     border-radius: 6px;
     outline: none;
-    font-weight: 500;
-    letter-spacing: 2px;
     color: #ffffff;
     background: rgb(78, 148, 79);
     cursor: pointer;
@@ -99,8 +155,18 @@ body{
 .btn-sub:hover{
     background: rgb(71, 189, 73);
 }
-
-.form-control{
-    color: #000000;
-    font-family: 'Inter';
+.btn-cancel{
+    margin-left: 5px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    font-weight: 500;
+    color: #ffffff;
+    background: rgb(133, 38, 38);
+    cursor: pointer;
+    box-shadow: -2px 4px 4px #000000;
+}
+.btn-cancel:hover{
+    background: rgb(192, 37, 37);
 }

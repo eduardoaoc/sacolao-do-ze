@@ -1,3 +1,4 @@
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/2747ec91e0.js"></script>
     <link rel="shortcut icon" href="static/img/logo2.png" type="image/x-icon">
     <title>
@@ -20,6 +19,7 @@
                 <h1>Administração</h1>
             </a>
         </div>
+        {% include '_messages.html' %}
         <ul class="nav-list">
             <li>
                 <a href="/" title="LOJA.">
@@ -50,35 +50,41 @@
             </a>
             </li>
         </ul>
-    </nav> 
-        <table class="content-table">
-            <thead>
-                {% if categories %}
-
-                {% for category in categories %}
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Editar</th>
-                    <th>Remover</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{loop.index}}</td>
-                    <td>{{category.name}}</td>
-                    <td>
-                        <a href="{{url_for('updateproduct', id=product.id)}}"" class="btn-edit">
-                            Editar
-                        </a>
-                    </td>
-                    <td>
-                        <a href="{{url_for('deleteproduct', id=product.id)}}" class="btn-delete">
-                            Remover
-                        </a>
-                    </td>>
-                </tr>
-                {% endfor %}
-                {% endif %}
-</body>      
+    </nav>
+    <table class="content-table">
+        <thead>   
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Editar</th>
+                <th>Remover</th>
+            </tr>
+        </thead>
+            {% if categories %}
+            {% for category in categories %}
+        <tbody>
+                <td>{{loop.index}}</td>
+                <td>{{category.name}}</td>
+                <td>
+                    <a href="{{url_for('updatecat', id=category.id)}}" class="btn-edit">
+                        Editar
+                    </a>
+                </td>
+                <td>
+                    <a href="{{url_for('deletecat', id=category.id)}}" class="btn-delete">
+                        Remover
+                    </a>
+                </td>>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+        <script>
+            let click= document.querySelector('.click');
+            let list= document.querySelector('.list');
+            click.addEventListener("click",()=>{
+                list.classList.toggle('newlist');
+            });
+        </script>
+</body>   
 </html>  
+{% endblock content %}

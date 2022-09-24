@@ -54,7 +54,7 @@ def addcat():
         getcat= request.form.get('category')
         cat= Category(name=getcat)
         db.session.add(cat)
-        flash(f'A categoria {getcat} foi adicionada ao banco de dados.', 'success')
+        flash(f"A categoria '{getcat}' foi adicionada ao banco de dados.", 'success')
         db.session.commit()
         return redirect(url_for('addcat'))
     return render_template('produtos/addcat.html')    
@@ -74,7 +74,7 @@ def updatecat(id):
         flash(f'A categoria foi atualizada.','success')
         db.session.commit()
         return redirect(url_for('category'))
-    return render_template('products/updatecat.html', title='Update category page', updatecat=updatecat)            
+    return render_template('produtos/updatecategory.html', title='Update category page', updatecat=updatecat)            
 
 #remove uma categoria
 @app.route('/deletecat/<int:id>')
@@ -87,9 +87,9 @@ def deletecat(id):
     try:
         db.session.delete(category)
         db.session.commit()
-        flash(f'A categoria {category.name} foi removida do banco de dados..', 'success')
+        flash(f"A categoria '{category.name}' foi removida do banco de dados.", 'success')
     except:
-        flash(f'An error ocurred','danger')    
+        flash(f'Ocorreu algum erro.','danger')    
     return redirect(url_for('category'))
   
 #adiciona um produto
@@ -117,7 +117,7 @@ def addproduct():
         addpro= AddProduct(name=name,price=price,discount=discount, stock=stock, 
         desc=desc, category_id=category, image_1=image_1, image_2=image_2, image_3=image_3)
         db.session.add(addpro)
-        flash(f'O produto {name} foi adicionado ao banco de dados.', 'success')
+        flash(f"O produto '{name}' foi adicionado ao banco de dados.", 'success')
         db.session.commit()
         return redirect(url_for('admin'))
     return render_template('produtos/addproduto.html' , title='Add product page', form=form, categories= categories)    
@@ -189,5 +189,5 @@ def deleteproduct(id):
         flash(f'Ocorreu algum erro.','danger')    
     db.session.delete(product)
     db.session.commit()
-    flash(f'The product {product.name} was deleted from your database.', 'success')
+    flash(f"O produto '{product.name}' foi removido do banco de dados.", 'success')
     return redirect(url_for('admin'))

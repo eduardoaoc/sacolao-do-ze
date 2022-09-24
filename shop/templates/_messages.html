@@ -1,8 +1,20 @@
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
+    <style>
+      .flashes{
+        background: none;
+        border-radius: 4px;
+        padding: 5px 5px;
+        font-family: 'Inter';
+        font-size: 1.0em;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        text-shadow: none;
+      }
+    </style>
     <div class=flashes>
     {% for category, message in messages %}
-      <div class="alert -{{ category }}" style="color: #ffff;">{{ message }}</div>
+      <div class="alert-error-{{ category }}">{{ message }}</div>
     {% endfor %}
     </div>
   {% endif %}

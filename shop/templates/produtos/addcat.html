@@ -16,7 +16,6 @@
 <body>
     <div class="box">       
         <div class="form">
-            {% include '_messages.html' %}
 
             <h1>Adiocionar Categoria</h1>
             <form action="" method="POST">
@@ -28,6 +27,8 @@
                 <button class="btn-sub" type="submit">Adicionar</button>              
                 <a class="btn-cancel"  href="{{url_for('category')}}" style="text-decoration: none;">Cancelar</a>              
             </form>
+            <br>
+            {% include '_messages.html' %}
         </div>
     </div>
 </body>

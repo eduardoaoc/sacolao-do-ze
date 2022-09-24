@@ -500,7 +500,8 @@ footer{
 
 /*TABELA ADMIN*/
 .content-table{
-    font-family: 'Inter', sans-serif;
+    color: black;
+    font-family: 'Inter';
     position:absolute;
     top:15%;
     left:400px;
@@ -532,7 +533,7 @@ footer{
 .content-table tbody tr:nth-of-type(even){
     background-color: #f3f3f3;
 }
-.content-table tbody tr:last-of-type{
+.content-table tbody:last-of-type{
     border-bottom: 2px solid rgb(71, 189, 73);
 }
 

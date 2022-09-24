@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/addprod.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/addprod.css' ) }}">
     <script src="https://kit.fontawesome.com/2747ec91e0.js"></script>
     <link rel="shortcut icon" href="/shop/static/img/logo2.png" type="image/x-icon">
     <title>
@@ -19,38 +19,56 @@
             {% include '_messages.html'%}
             <h1>Adiocionar Produto</h1>
             {% from "_formhelpers.html" import render_field %}
-            <form action="POST" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data">
                 <div class="inputbox">
-                    {{ render_field(form.name, class='form-control') }}
-                    <i></i>
+                    <div class="name">
+                        {{ render_field(form.name, class='form-control') }}
+                     <i></i>
+                    </div>
                 </div>
                 <div class="inputbox">
-                    <p style="font-family: Inter; ">Categoria</p>
+                    <p style="font-family: Inter; margin-bottom: 5px;">Categoria</p>
                 <select name="category" id="category" required>
-                    <option value="">Categoria</option>
+                    <option value="" >Selecione a Categoria</option>
                     {% for category in categories %}
                 <option value="{{category.id}}">{{category.name}}</option>
                     {% endfor %}
                 </select>        
                 </div>
                 <div class="inputbox">
-                    {{ render_field(form.stock, class='form-control') }}
-                    <i></i>
+                    <div class="stock">
+                        {{ render_field(form.stock, class='form-control') }}
+                        <i></i>
+                    </div>
                 </div>
                 <div class="inputbox">
-                    {{ render_field(form.price, class='form-control') }}
-                    <i></i>
+                    <div class="price">
+                        {{ render_field(form.price, class='form-control') }}
+                        <i></i>
+                    </div>
                 </div>
                 <div class="inputbox">
-                    {{ render_field(form.discription, class='form-control', rows='10') }}
+                    <div class="price">
+                        {{ render_field(form.discount, class='form-control') }}
+                        <i></i>
+                    </div>
                 </div>
                 <div class="inputbox">
-                    {{ render_field(form.image_1, class='form-control', required=True)}}
-                    {{ render_field(form.image_2, class='form-control', required=True)}}
-                    {{ render_field(form.image_3, class='form-control', required=True)}}
-                    <i></i>
+                    <div class="desc">
+                        {{ render_field(form.discription, class='form-control', rows='8') }}
+                        <i></i>
+                    </div>
                 </div>
-                <button class="btn-sub" href='#'>Adicionar</button>              
+                <div class="inputbox">
+                    <div class="imgs">
+                        {{ render_field(form.image_1, class='form-control', required=True)}}
+                        <br>
+                        {{ render_field(form.image_2, class='form-control', required=True)}}
+                        <br>
+                        {{ render_field(form.image_3, class='form-control', required=True)}}
+                    </div>        
+                </div>
+                <button class="btn-sub" type="submit">Adicionar</button>              
             </form>
         </div>
     </div>
