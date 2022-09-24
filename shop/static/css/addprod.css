@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -11,14 +12,15 @@ body{
     justify-content: center;
     min-height: 100vh;
     background:linear-gradient(rgb(221, 224, 199),rgb(203, 207, 168))
+  ;
 }
 
 .box{
-    box-shadow: -3px 6px 6px black;
-    margin-top: 10%;
+    box-shadow: -3px 7px 7px black;
+    margin-top: 2%;
     position: relative;
-    width: 380px;
-    height: 360px;
+    width: 500px;
+    height: 820px;
     background: rgb(63, 61, 61);
     border-radius: 8px;
     overflow: hidden;
@@ -28,8 +30,8 @@ body{
     position: absolute;
     top: -50%;
     left: -50%;
-    width: 380px;
-    height: 360px;
+    width: 700px;
+    height: 800px;
     background: linear-gradient(0deg, transparent, rgb(131, 189, 117), rgb(78, 148, 79));
     animation: animate 6s linear infinite;
     transform-origin: bottom right;
@@ -39,8 +41,8 @@ body{
     position: absolute;
     top: -50%;
     left: -50%;
-    width: 380px;
-    height: 360px;
+    width: 700px;
+    height: 900px;
     background: linear-gradient(0deg, transparent, rgb(131, 189, 117), rgb(78, 148, 79));
     animation: animate 6s linear infinite;
     transform-origin: bottom right;
@@ -53,96 +55,41 @@ body{
     {transform: rotate(360deg);}
 }
 .form{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
     position: absolute;
     background: rgb(36, 36, 36);
     border-radius: 8px;
     z-index: 999;
     inset: 2px;
     padding: 50px 40px;
-    display: flex;
-    flex-direction: column;
 }
 
 .form h1{
+    margin-left:15%;
     text-shadow: -2px 5px 5px black;
     color: rgb(255, 255, 255);
     font-weight: 500;
     text-align: center;
-    letter-spacing: 1px;
+    letter-spacing: 0.1em;
     font-family: 'Lobster';
 }
 .inputbox{
     position: relative;
     width: 300px;
-    margin-top: 35px;
+    margin-top: 15px;
+    color: #ffffff;
 }
-.inputbox input{
-    position: relative;
-    width: 100%;
-    padding: 20px 10px 10px;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: rgb(255, 255, 255);
-    font-size: 1em;
-    letter-spacing: 0.05em;
-    z-index: 999;
-}
-.inputbox span{
-    position: absolute;
-    left: 0;
-    padding: 20px 10px 10px;
-    font-size: 1em;
-    color: grey;
-    pointer-events: none;
-    letter-spacing: 0.05em;
-    transition: 0.5s;
-}
-.inputbox input:valid ~ span,
-.inputbox input:focus ~ span
-{
-    color:rgb(131, 189, 117);
-    transform: translateX(0px) translateY(-34px);
-    font-size: 0.75em;
-}
-.inputbox i{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background: rgb(131, 189, 117);
-    border-radius: 4px;
-    transition: 0.5s;
-    pointer-events: none;
-    z-index: 777;
-}
-.inputbox input:valid ~ i,
-.inputbox input:focus~ i{
-    height: 44px;
-}
-
-.links{
-    display: flex;
-    justify-content: space-between;
-}
-.links a{
-    margin: 15px 0;
-    font-size: 0.75em;
-    color: grey;
-    text-decoration: none;
-}
-
 .btn-sub{
-    margin-left: 10%;
-    margin-bottom: 3px;
-    margin-top: 20px;
-    width: 35%;
+    margin-top: 10px;
+    width: 120px;
     padding: 16px 0px;
     border: none;
     border-radius: 6px;
     outline: none;
     font-weight: 500;
+    letter-spacing: 2px;
     color: #ffffff;
     background: rgb(78, 148, 79);
     cursor: pointer;
@@ -152,18 +99,8 @@ body{
 .btn-sub:hover{
     background: rgb(71, 189, 73);
 }
-.btn-cancel{
-    margin-left: 5%;
-    padding: 16px 10px;
-    border: none;
-    border-radius: 6px;
-    outline: none;
-    font-weight: 500;
-    color: #ffffff;
-    background: rgb(133, 38, 38);
-    cursor: pointer;
-    box-shadow: -2px 4px 4px #000000;
-}
-.btn-cancel:hover{
-    background: rgb(192, 37, 37);
+
+.form-control{
+    color: #000000;
+    font-family: 'Inter';
 }

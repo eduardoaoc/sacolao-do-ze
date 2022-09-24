@@ -1,12 +1,12 @@
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/shop/static/css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="static/css/style.css">
     <script src="https://kit.fontawesome.com/2747ec91e0.js"></script>
     <link rel="shortcut icon" href="static/img/logo2.png" type="image/x-icon">
     <title>
@@ -16,35 +16,42 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-            <a href="#home" >
+            <a href="/admin" >
                 <h1>Administração</h1>
             </a>
         </div>
         <ul class="nav-list">
             <li>
-                <a href="#home" title="LOJA.">
+                <a href="/" title="LOJA.">
                     <i class="fa-solid fa-house"></i>
                 </a>
             </li>
-            <li><a href="#">Todos produtos</a></li>
+            <li><a href="/admin">Todos produtos</a></li>
 
-            <li><a href="#">Categorias</a></li>
-            <li><a href="#">Adicionar</a></li>
-            <li><a href="#" title="Login/Register">
+            <li><a href="/category">Categorias</a></li>
+            <div class="conteiner">
+                <button class="click">Adicionar</button>
+                <div class="list">
+                    <a href="/addproduct"><button class="links-navbar" >Produto</button></a>
+                    <a href="/addcat"><button class="links-navbar" >Categoria</button></a>
+                </div>
+            </div>
+            <li><a href="/admin/login" title="Login/Register">
                 <i class="fa-solid fa-user"></i>
             </a>
             </li>
             <li>
-                <a href="#" title="Logout">
+                <a href="/logout" title="Logout">
                     <i class="fa-solid fa-user-xmark"></i>
                 </a>
             </li>
-            <li><a href="#" title="Área retrista">
+            <li><a href="/admin" title="Área retrista">
                 <i class="fa-solid fa-user-lock"></i>
             </a>
             </li>
         </ul>
     </nav>  
+        {% include '_messages.html' %}
         <table class="content-table">
             <thead>
                 <tr>
@@ -139,5 +146,13 @@
                 
             </tbody>
         </table>
+        <script>
+            let click= document.querySelector('.click');
+            let list= document.querySelector('.list');
+            click.addEventListener("click",()=>{
+                list.classList.toggle('newlist');
+            });
+        </script>
 </body>      
 </html>  
+{% endblock content %}

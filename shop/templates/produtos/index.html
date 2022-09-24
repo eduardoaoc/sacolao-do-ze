@@ -1,3 +1,4 @@
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,26 +18,30 @@
     <!--NAVBAR-->
     <nav class="navbar">
         <div class="logo">
-            <a href="#home" >
+            <a href="/" >
                 <img src="{{url_for('static', filename='img/logo2.png')}}">
             </a>
         </div>
         <ul class="nav-list">
-            <li><a href="#home" title="Ínicio">
+            <li><a href="/" title="Ínicio">
                 <i class="fa-solid fa-house"></i>
             </a></li>
             <li><a href="#legumes">Verduras & legumes</a></li>
             <li><a href="#frutas">Frutas</a></li>
             <li><a href="#contato">Contato</a></li>
-            <li><a href="#" title="Carrinho">
+            <form class="d-flex" role="search" style="margin-left: 10px;" action="{{url_for('result')}}">
+                <input type="search"  placeholder="Pesquisar.." aria-label="Search" name="q">
+                    <button class="btn-search" type="submit">Pesquisar</button>
+            </form>          
+            <li><a href="/carts" title="Carrinho">
                 <i class="fa-solid fa-cart-shopping"></i>
             </a>
             </li>
-            <li><a href="#" title="Login/Register">
+            <li><a href="/login" title="Login/Register">
                 <i class="fa-solid fa-user"></i>
             </a>
-            </li>
-            <li><a href="#" title="Área retrista">
+            </li>   
+            <li><a href="/admin/login" title="Área retrista">
                 <i class="fa-solid fa-user-lock"></i>
             </a>
             </li>
@@ -62,35 +67,38 @@
         <div class="container">
             <div class="card" >
                 <h1 class="title-product">Beterraba</h1>
-                <a href="{{url_for('index')}}">
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/beterraba.png') }}" title='Clique para ver mais detalhes'>
                 </a>
                 <h1>R$ 5.99 (100G)</h1>
-                <button class="btn-add" href='#'>Adicionar</button>              
+                <button class="btn-add" href='#' type="submit">Adicionar</button>              
             </div>
             <div class="card" >
-                <h1 class="title-product">Beterraba <br> R$5.99(100g)</h1>
-                <a href="{{url_for('index')}}">
+                <h1 class="title-product">Beterraba</h1>
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/beterraba.png') }}" title='Clique para ver mais detalhes'>
                 </a>
+                <h1>R$5.99(100g)</h1>
                 <div>
                     <button class="btn-add" href='#'>Adicionar</button>              
                 </div>
             </div>
             <div class="card" >
-                <h1 class="title-product">Cenoura <br> R$5.99 (100g)</h1>
-                <a href="{{url_for('index')}}">
+                <h1 class="title-product">Cenoura</h1>
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/cenoura.png') }}" title='Clique para ver mais detalhes'>
                 </a>
+                <h1>R$5.99(100g)</h1>
                 <div>
                     <button class="btn-add" href='#'>Adicionar </button>              
                 </div>
             </div>
             <div class="card" >
-                <h1 class="title-product">Beterraba <br> R$5.99(100g)</h1>
-                <a href="{{url_for('index')}}">
+                <h1 class="title-product">Beterraba</h1>
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/beterraba.png') }}" title='Clique para ver mais detalhes'>
                 </a>
+                <h1>R$5.99(100g)</h1>
                 <div>
                     <button class="btn-add" href='#'>Adicionar</button>              
                 </div>
@@ -98,37 +106,41 @@
         </div>
         <div class="container" >
             <div class="card" >
-                <h1 class="title-product">Batata <br> R$5.99 (100g)</h1>
-                <a href="{{url_for('index')}}">
+                <h1 class="title-product">Batata</h1>
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/batata.png') }}" title='Clique para ver mais detalhes'>
                 </a>
+                <h1>R$5.99(100g)</h1>
                 <div>
                     <button class="btn-add" href='#'>Adicionar</button>              
                 </div>
             </div>
             <div class="card" >
-                <h1 class="title-product">Mandioca <br> R$5.99 (100g)</h1>
-                <a href="{{url_for('index')}}">
+                <h1 class="title-product">Mandioca <br> </h1>
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/mandioca.png') }}" title='Clique para ver mais detalhes'>
                 </a>
+                <h1>R$5.99(100g)</h1>
                 <div>
                     <button class="btn-add" href='#'>Adicionar </button>              
                 </div>
             </div>
             <div class="card" >
-                <h1 class="title-product">Couve flor<br> R$5.99 (100g)</h1>
-                <a href="{{url_for('index')}}">
+                <h1 class="title-product">Couve flor<br> </h1>
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/couve-flor.jpg') }}" title='Clique para ver mais detalhes'>
                 </a>
+                <h1>R$5.99(100g)</h1>
                 <div>
                     <button class="btn-add" href='#'>Adicionar </button>              
                 </div>
             </div>
             <div class="card" >
-                <h1 class="title-product">Beterraba <br> R$5.99(100g)</h1>
-                <a href="{{url_for('index')}}">
+                <h1 class="title-product">Beterraba <br></h1>
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/beterraba.png') }}" title='Clique para ver mais detalhes'>
                 </a>
+                <h1>R$5.99(100g)</h1>
                 <div>
                     <button class="btn-add" href='#'>Adicionar</button>              
                 </div>
@@ -148,38 +160,42 @@
        </div>
         <div class="container">
             <div class="card" >
-                <h1 class="title-product">Banana <br> R$5.99 (100)</h1>
-                <a href="{{url_for('index')}}">
+                <h1 class="title-product">Banana </h1>
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/banana.png') }}" title='Clique para ver mais detalhes'>
                 </a>
+                <h1>R$5.99(100g)</h1>
                 <div>
                     <button class="btn-add" href='#'>Adicionar</button>              
                 </div>
             </div>
             <div class="card" >
-                <h1 class="title-product">Morango <br> R$5.99 (100g)</h1>
-                <a href="{{url_for('index')}}">
+                <h1 class="title-product">Morango  </h1>
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/morango.jpg') }}" title='Clique para ver mais detalhes'> 
                 </a>
+                <h1>R$5.99(100g)</h1>
                 <div>
                     <button class="btn-add" href='#'>Adicionar </button>              
                 </div>
             </div>
             <div class="card" >
-                <h1 class="title-product">Kiwi <br> R$5.99 (100g)</h1>
-                <a href="{{url_for('index')}}">
+                <h1 class="title-product">Kiwi</h1>
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/kiwi.jpeg') }}" title='Clique para ver mais detalhes'>
                 </a>
+                <h1>R$5.99(100g)</h1>
                 <div>
                     <button class="btn-add" href='#'>Adicionar </button>              
                 </div>
             </div>
         
             <div class="card" >
-                <h1 class="title-product">Melância <br> R$5.99 (100g)</h1>
-                <a href="{{url_for('index')}}">
+                <h1 class="title-product">Melância  </h1>
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/melancia.jpg') }}" title='Clique para ver mais detalhes'>
                 </a>
+                <h1>R$5.99(100g)</h1>
                 <div>
                     <button class="btn-add" href='#'>Adicionar</button>              
                 </div>
@@ -188,38 +204,42 @@
         <!--teste-->
         <div class="container">
             <div class="card" >
-                <h1 class="title-product">Banana <br> R$5.99 (100)</h1>
-                <a href="{{url_for('index')}}">
+                <h1 class="title-product">Banana</h1>
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/banana.png') }}" title='Clique para ver mais detalhes'>
                 </a>
+                <h1>R$5.99(100g)</h1>
                 <div>
                     <button class="btn-add" href='#'>Adicionar</button>              
                 </div>
             </div>
             <div class="card" >
-                <h1 class="title-product">Morango <br> R$5.99 (100g)</h1>
-                <a href="{{url_for('index')}}">
+                <h1 class="title-product">Morango </h1>
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/morango.jpg') }}" title='Clique para ver mais detalhes'> 
                 </a>
+                <h1>R$5.99(100g)</h1>
                 <div>
                     <button class="btn-add" href='#'>Adicionar </button>              
                 </div>
             </div>
             <div class="card" >
-                <h1 class="title-product">Kiwi <br> R$5.99 (100g)</h1>
-                <a href="{{url_for('index')}}">
+                <h1 class="title-product">Kiwi </h1>
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/kiwi.jpeg') }}" title='Clique para ver mais detalhes'>
                 </a>
+                <h1>R$5.99(100g)</h1>
                 <div>
                     <button class="btn-add" href='#'>Adicionar </button>              
                 </div>
             </div>
         
             <div class="card" >
-                <h1 class="title-product">Melância <br> R$5.99 (100g)</h1>
-                <a href="{{url_for('index')}}">
+                <h1 class="title-product">Melância </h1>
+                <a href="#">
                     <img src="{{ url_for('static', filename='img/melancia.jpg') }}" title='Clique para ver mais detalhes'>
                 </a>
+                <h1>R$5.99(100g)</h1>
                 <div>
                     <button class="btn-add" href='#'>Adicionar</button>              
                 </div>
@@ -301,3 +321,5 @@
     <script src="static/js/mobile.js"></script>
 </body>
 </html>
+{% endblock content %}
+

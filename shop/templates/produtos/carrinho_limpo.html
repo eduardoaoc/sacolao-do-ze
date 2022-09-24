@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/shop/static/css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/2747ec91e0.js"></script>
@@ -17,35 +18,35 @@
     <!--NAVBAR-->
     <nav class="navbar">
         <div class="logo">
-            <a href="#home" >
+            <a href="/" >
                 <img src="{{url_for('static', filename='img/logo2.png')}}">
             </a>
         </div>
         <ul class="nav-list">
-            <li><a href="#home" title="Ínicio">
+            <li><a href="/" title="Ínicio">
                 <i class="fa-solid fa-house"></i>
             </a></li>
             <li><a href="#legumes">Verduras & legumes</a></li>
             <li><a href="#frutas">Frutas</a></li>
             <li><a href="#contato">Contato</a></li>
-            <li><a href="#" title="Carrinho">
+            <li><a href="/carts" title="Carrinho">
                 <i class="fa-solid fa-cart-shopping"></i>
             </a>
             </li>
-            <li><a href="#" title="Login/Register">
+            <li><a href="/login" title="Login/Register">
                 <i class="fa-solid fa-user"></i>
             </a>
             </li>
-            <li><a href="#" title="Área retrista">
+            <li><a href="/admin" title="Área retrista">
                 <i class="fa-solid fa-user-lock"></i>
             </a>
             </li>
         </ul>
     </nav>
     <div class="row">
-        <img src="/shop/static/img/clear-cart.png" alt="Clear Cart">
+        <img src="static/img/clear-cart.png" alt="Clear Cart">
         <h1>Seu carrinho está vazio.</h1>
     </div>  
-    <button class="back-shop" href='/'>Voltar as compras.</button>              
+    <a class="back-shop" href='/' >Voltar as compras.</a>              
 </body>      
 </html>  
