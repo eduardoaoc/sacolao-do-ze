@@ -16,9 +16,8 @@ def customer_register():
         hash_password= bcrypt.generate_password_hash(form.password.data)
         register= Register(
         name=form.name.data, username=form.username.data,
-        email=form.email.data, password=hash_password, country=form.country.data,
-        city=form.city.data, address=form.address.data,
-        zipcode=form.zipcode.data
+        email=form.email.data, password=hash_password, 
+        city=form.city.data, address=form.address.data
         )
         db.session.add(register)
         flash(f'Bem-vindo {form.name.data}. Obrigado por cadastrar-se!','success')
@@ -43,11 +42,12 @@ def customerLogin():
 
 #logout cliente
 @app.route('/logout')
-def customer_logout():
+def customerLogout():
     logout_user()
     flash('Você foi desconectado.','success')
     return redirect(url_for('home'))
 
+#orçamento
 @app.route('/getorder')
 @login_required
 def get_order():
@@ -66,7 +66,7 @@ def get_order():
             flash('Alguma coisa deu errado.','danger')
             return redirect(url_for('getCart'))
 
-
+#orçamento
 @app.route('/orders/<invoice>')
 @login_required
 def orders(invoice):
@@ -85,4 +85,5 @@ def orders(invoice):
 
     else:
         return redirect(url_for('customerLogin'))    
-    return render_template('cliente/order.html', invoice=invoice, tax=tax, subTotal=subTotal, grandTotal=grandTotal, customer=customer, orders=orders)  
+    return render_template('cliente/order.html', invoice=invoice, 
+    tax=tax, subTotal=subTotal, grandTotal=grandTotal, customer=customer, orders=orders)  

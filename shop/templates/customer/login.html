@@ -1,11 +1,11 @@
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/style_login.css">
-    <script src="https://kit.fontawesome.com/2747ec91e0.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style_login.css')}}">
     <link rel="shortcut icon" href="/shop/static/img/logo2.png" type="image/x-icon">
     <title>
         Sacolão do Zé | Desde 2006
@@ -13,28 +13,30 @@
 </head>
 <body>
     <div class="box">
-        
-        <div class="form">
-
-            <h1>Login</h1>
-            <div class="inputbox">
-                <input type="text" required='required' name="" value="">
-                <span>Usuário</span>
-                <i></i>
+        {% from "_formhelpers.html" import render_field %}
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form">
+                {{ form.csrf_token }}
+                <h1>Login</h1>
+                <div class="inputbox" style="color: grey;">
+                    {{ render_field(form.email, class='form-control') }}
+                    <i></i>
+                </div>
+                <div class="inputbox"  style="color: grey;">
+                    {{ render_field(form.password, class='form-control') }}
+                    <i></i>
+                </div>
+                <div class="links">
+                    <a href="#" title="Entre em contato com o suporte">Esqueci minha senha.</a>
+                    <a href="/register">Cadastrar-se</a>
+                </div>
+                 {% include '_messages.html'%}
+                <div>
+                    <button class="btn-sub" type="submit">Entrar</button>              
+                </div>
             </div>
-            <div class="inputbox">
-                <input type="password" required='required' name="" value="">
-                <span>Senha</span>
-                <i></i>
-            </div>
-            <div class="links">
-                <a href="#">Esqueci minha senha.</a>
-                <a href="/register">Cadastrar-se</a>
-            </div>
-            <div>
-                <button class="btn-sub" href='#'>Entrar</button>              
-            </div>
-        </div>
+        </form>    
     </div>
 </body>
 </html>
+{% endblock content %}

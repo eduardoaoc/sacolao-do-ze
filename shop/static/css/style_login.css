@@ -18,7 +18,7 @@ body{
     margin-top: 10%;
     position: relative;
     width: 380px;
-    height: 420px;
+    height: 490px;
     background: rgb(63, 61, 61);
     border-radius: 8px;
     overflow: hidden;
@@ -29,7 +29,7 @@ body{
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 420px;
+    height: 490px;
     background: linear-gradient(0deg, transparent, rgb(131, 189, 117), rgb(78, 148, 79));
     animation: animate 6s linear infinite;
     transform-origin: bottom right;
@@ -40,7 +40,7 @@ body{
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 420px;
+    height: 490px;
     background: linear-gradient(0deg, transparent, rgb(131, 189, 117), rgb(78, 148, 79));
     animation: animate 6s linear infinite;
     transform-origin: bottom right;
@@ -88,24 +88,7 @@ body{
     letter-spacing: 0.05em;
     z-index: 999;
 }
-.inputbox span{
-    position: absolute;
-    left: 0;
-    padding: 20px 10px 10px;
-    font-size: 1em;
-    color: grey;
-    pointer-events: none;
-    letter-spacing: 0.05em;
-    transition: 0.5s;
-}
-.inputbox input:valid ~ span,
-.inputbox input:focus ~ span
-{
-    
-    color:rgb(131, 189, 117);
-    transform: translateX(0px) translateY(-34px);
-    font-size: 0.75em;
-}
+
 .inputbox i{
     position: absolute;
     left: 0;
@@ -117,10 +100,6 @@ body{
     transition: 0.5s;
     pointer-events: none;
     z-index: 777;
-}
-.inputbox input:valid ~ i,
-.inputbox input:focus~ i{
-    height: 44px;
 }
 
 .links{
@@ -142,12 +121,11 @@ body{
     margin-bottom: 3px;
     margin-top: 20px;
     width: 60%;
-    padding: 16px 0px;
+    padding: 10px 0px;
     border: none;
     border-radius: 6px;
     outline: none;
     font-weight: 500;
-    letter-spacing: 2px;
     color: #ffffff;
     background: rgb(78, 148, 79);
     cursor: pointer;

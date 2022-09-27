@@ -94,10 +94,7 @@ body{
     pointer-events: none;
     z-index: 777;
 }
-.inputbox .form-control:valid ~ i,
-.inputbox .form-control:focus~ i{
-    height: 44px;
-}
+
 .inputbox select{
     background: rgb(36, 36, 36);
     height: 20%;

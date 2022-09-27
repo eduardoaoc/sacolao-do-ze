@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/2747ec91e0.js"></script>
     <link rel="shortcut icon" href="static/img/logo2.png" type="image/x-icon">
@@ -24,26 +23,49 @@
         </div>
         <ul class="nav-list">
             <li><a href="/" title="Ínicio">
-                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-house" style="left:40% ;"></i>
             </a></li>
-            <li><a href="#legumes">Verduras & legumes</a></li>
-            <li><a href="#frutas">Frutas</a></li>
-            <li><a href="#contato">Contato</a></li>
-            <form class="d-flex" role="search" style="margin-left: 10px;" action="{{url_for('result')}}">
+            <li class="conteiner">
+                <button class="click">
+                    <i class="fa-solid fa-bars" style="margin-right: 40px;"></i>
+                </button>
+                <li class="list">
+                    {% for category in categories %}
+                    <a href="{{url_for('get_category', id=category.id)}}">
+                        <button class="links-navbar" >{{category.name}}</button>
+                    </a>
+                    {% endfor %}
+                </li>
+            </li>
+            <form class="d-flex" role="search" action="{{url_for('result')}}">
                 <input type="search"  placeholder="Pesquisar.." aria-label="Search" name="q">
                     <button class="btn-search" type="submit">Pesquisar</button>
             </form>          
-            <li><a href="/carts" title="Carrinho">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-            </li>
-            <li><a href="/login" title="Login/Register">
+            <li>
+                <a href="/carts" title="Carrinho">
+                    <i class="fa-solid fa-cart-shopping">
+                    <span style="color: rgb(49, 211, 84); font-family: 'Verdana'; font: bold;">{{session['Shoppingcart']|length}}</span>
+                    </i>
+                </a>
+            </li>  
+            <li>
+            {% if current_user.is_authenticated %}
+                <a href="{{url_for('customerLogout')}}" title="Logout">
+                    <i class="fa-solid fa-user-xmark"></i>
+                    <span style="color: rgb(49, 211, 84); font-family: 'Verdana'; text-transform: uppercase;">{{current_user.name}}</span>
+                </a>
+            </li> 
+            {% else %}
+            <li>
+                <a href="{{url_for('customerLogin')}}" title="Login/Register">
                 <i class="fa-solid fa-user"></i>
-            </a>
-            </li>   
-            <li><a href="/admin/login" title="Área retrista">
+                </a>
+            </li>
+            {% endif %}
+            <li>
+                <a href="/admin/login" title="Área retrista">
                 <i class="fa-solid fa-user-lock"></i>
-            </a>
+                </a>
             </li>
         </ul>
     </nav>
@@ -61,192 +83,22 @@
         </div>
     </section>
     <!--VERDURAS/LEGUMES-->
-    <div class="title-h1" id="legumes" href="#legumes" style="text-decoration: none;">     
-            <h1>Verduras & legumes</h1>
-        </div>
+    {% for product in products.items %}>
         <div class="container">
             <div class="card" >
-                <h1 class="title-product">Beterraba</h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/beterraba.png') }}" title='Clique para ver mais detalhes'>
+                <h1 class="title-product">{{product.name}}</h1>
+                <a href="{{url_for('single_page', id=product.id)}}">
+                    <img src="{{ url_for('static', filename='images/ + product.image_1') }}" title='Clique para ver mais detalhes'>
                 </a>
-                <h1>R$ 5.99 (100G)</h1>
-                <button class="btn-add" href='#' type="submit">Adicionar</button>              
+                {% if product.discount > 0 %}
+                    <p class="text-center" style="text-shadow: 1px 1px 1px grey; color: red; font-weight: bold; margin-bottom: 5px; font-size: 25px;">-{{product.discount}}%</p>
+                {% endif %}
+                <h1>R${{product.price}}</h1>
+                <button class="btn-add" type="submit">Adicionar</button>       
+                <input type="hidden" name="quantity" id="" value="1" min="1" max="{{product.stock}}">       
             </div>
-            <div class="card" >
-                <h1 class="title-product">Beterraba</h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/beterraba.png') }}" title='Clique para ver mais detalhes'>
-                </a>
-                <h1>R$5.99(100g)</h1>
-                <div>
-                    <button class="btn-add" href='#'>Adicionar</button>              
-                </div>
-            </div>
-            <div class="card" >
-                <h1 class="title-product">Cenoura</h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/cenoura.png') }}" title='Clique para ver mais detalhes'>
-                </a>
-                <h1>R$5.99(100g)</h1>
-                <div>
-                    <button class="btn-add" href='#'>Adicionar </button>              
-                </div>
-            </div>
-            <div class="card" >
-                <h1 class="title-product">Beterraba</h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/beterraba.png') }}" title='Clique para ver mais detalhes'>
-                </a>
-                <h1>R$5.99(100g)</h1>
-                <div>
-                    <button class="btn-add" href='#'>Adicionar</button>              
-                </div>
-            </div>
-        </div>
-        <div class="container" >
-            <div class="card" >
-                <h1 class="title-product">Batata</h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/batata.png') }}" title='Clique para ver mais detalhes'>
-                </a>
-                <h1>R$5.99(100g)</h1>
-                <div>
-                    <button class="btn-add" href='#'>Adicionar</button>              
-                </div>
-            </div>
-            <div class="card" >
-                <h1 class="title-product">Mandioca <br> </h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/mandioca.png') }}" title='Clique para ver mais detalhes'>
-                </a>
-                <h1>R$5.99(100g)</h1>
-                <div>
-                    <button class="btn-add" href='#'>Adicionar </button>              
-                </div>
-            </div>
-            <div class="card" >
-                <h1 class="title-product">Couve flor<br> </h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/couve-flor.jpg') }}" title='Clique para ver mais detalhes'>
-                </a>
-                <h1>R$5.99(100g)</h1>
-                <div>
-                    <button class="btn-add" href='#'>Adicionar </button>              
-                </div>
-            </div>
-            <div class="card" >
-                <h1 class="title-product">Beterraba <br></h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/beterraba.png') }}" title='Clique para ver mais detalhes'>
-                </a>
-                <h1>R$5.99(100g)</h1>
-                <div>
-                    <button class="btn-add" href='#'>Adicionar</button>              
-                </div>
-            </div>
-        </div>
-        <!---BANNER-->
-        <div class="banner-content">
-            <div class="banner-content">
-                <img src="{{ url_for('static', filename='img/img.jpg') }}">
-            </div>
-        </div>
-        <!--FRUTAS-->
-        <div class="title-h2" id="frutas" >            
-            <a href="#frutas" style="text-decoration: none;">
-                <h1>Frutas</h1>
-            </a>
-       </div>
-        <div class="container">
-            <div class="card" >
-                <h1 class="title-product">Banana </h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/banana.png') }}" title='Clique para ver mais detalhes'>
-                </a>
-                <h1>R$5.99(100g)</h1>
-                <div>
-                    <button class="btn-add" href='#'>Adicionar</button>              
-                </div>
-            </div>
-            <div class="card" >
-                <h1 class="title-product">Morango  </h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/morango.jpg') }}" title='Clique para ver mais detalhes'> 
-                </a>
-                <h1>R$5.99(100g)</h1>
-                <div>
-                    <button class="btn-add" href='#'>Adicionar </button>              
-                </div>
-            </div>
-            <div class="card" >
-                <h1 class="title-product">Kiwi</h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/kiwi.jpeg') }}" title='Clique para ver mais detalhes'>
-                </a>
-                <h1>R$5.99(100g)</h1>
-                <div>
-                    <button class="btn-add" href='#'>Adicionar </button>              
-                </div>
-            </div>
-        
-            <div class="card" >
-                <h1 class="title-product">Melância  </h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/melancia.jpg') }}" title='Clique para ver mais detalhes'>
-                </a>
-                <h1>R$5.99(100g)</h1>
-                <div>
-                    <button class="btn-add" href='#'>Adicionar</button>              
-                </div>
-            </div>
-        </div>
-        <!--teste-->
-        <div class="container">
-            <div class="card" >
-                <h1 class="title-product">Banana</h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/banana.png') }}" title='Clique para ver mais detalhes'>
-                </a>
-                <h1>R$5.99(100g)</h1>
-                <div>
-                    <button class="btn-add" href='#'>Adicionar</button>              
-                </div>
-            </div>
-            <div class="card" >
-                <h1 class="title-product">Morango </h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/morango.jpg') }}" title='Clique para ver mais detalhes'> 
-                </a>
-                <h1>R$5.99(100g)</h1>
-                <div>
-                    <button class="btn-add" href='#'>Adicionar </button>              
-                </div>
-            </div>
-            <div class="card" >
-                <h1 class="title-product">Kiwi </h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/kiwi.jpeg') }}" title='Clique para ver mais detalhes'>
-                </a>
-                <h1>R$5.99(100g)</h1>
-                <div>
-                    <button class="btn-add" href='#'>Adicionar </button>              
-                </div>
-            </div>
-        
-            <div class="card" >
-                <h1 class="title-product">Melância </h1>
-                <a href="#">
-                    <img src="{{ url_for('static', filename='img/melancia.jpg') }}" title='Clique para ver mais detalhes'>
-                </a>
-                <h1>R$5.99(100g)</h1>
-                <div>
-                    <button class="btn-add" href='#'>Adicionar</button>              
-                </div>
-            </div>
-              
-        </div>
-        </div>
+    {% endfor %}    
+    </div>
         <!--CONTATO-->
         <div class="containe" id="contato">
             <div class="contet">
@@ -319,6 +171,13 @@
         </footer>
     <script src="static/js/script.js"></script>
     <script src="static/js/mobile.js"></script>
+    <script>
+        let click= document.querySelector('.click');
+        let list= document.querySelector('.list');
+        click.addEventListener("click",()=>{
+            list.classList.toggle('newlist');
+        });
+    </script>
 </body>
 </html>
 {% endblock content %}

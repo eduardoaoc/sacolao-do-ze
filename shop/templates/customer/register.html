@@ -1,73 +1,62 @@
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/cadastro.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/cadastro.css')}}">
     <link rel="shortcut icon" href="static/img/logo2.png" type="image/x-icon">
     <title>
         Sacolão do Zé | Desde 2006
     </title>
 </head>
 <body>
-    <div class="box">       
-        <div class="form">
-        <h1>Cadastre-se aqui.</h1>
-            <div class="inputbox">
-                <input type="text" required='required' name="" value="">
-                <span>Usuário</span>
-                <i></i>
+    {% from "_formhelpers.html" import render_field %}
+    <div class="box">     
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+            <div class="form">
+                <h1>Cadastre-se aqui.</h1>
+                <div class="inputbox" >
+                    {{ render_field(form.username, class='form-control', required=True) }}
+                    <i></i>
+                </div>
+                <div class="inputbox">
+                    {{ render_field(form.name, class='form-control', required=True) }}
+                    <i></i>
+                </div>
+                <div class="inputbox">
+                    {{ render_field(form.contact, class='form-control', required=True) }}
+                    <i></i>
+                </div>
+                <div class="inputbox">
+                    {{ render_field(form.email, class='form-control', required=True) }}
+                    <i></i>
+                </div>
+                <div class="inputbox">
+                    {{ render_field(form.city, class='form-control', required=True)}}
+                    <i></i>
+                </div>
+                <div class="inputbox">
+                    {{ render_field(form.address, class='form-control', required=True)}}
+                    <i></i>
+                </div>
+                <div class="inputbox">
+                    {{ render_field(form.password, class='form-control', required=True)}}
+                    <i></i>
+                </div>
+                <div class="inputbox">
+                    {{ render_field(form.confirm, class='form-control', required=True)}}
+                    <i></i>
+                </div>
+                <div>
+                    {{ form.submit(class="btn-sub") }}             
+                </div>
+                {% include '_messages.html'%}
             </div>
-            <div class="inputbox">
-                <input type="text" required='required' name="" value="">
-                <span>Nome completo</span>
-                <i></i>
-            </div>
-            <div class="inputbox">
-                <input type="text" required='required' name="" value="">
-                <span>Telefone</span>
-                <i></i>
-            </div>
-            <div class="inputbox">
-                <input type="text" required='required' name="" value="">
-                <span>Confirmar Telefone</span>
-                <i></i>
-            </div>
-            <div class="inputbox">
-                <input type="text" required='required' name="" value="">
-                <span>E-mail</span>
-                <i></i>
-            </div>
-            <div class="inputbox">
-                <input type="text" required='required' name="" value="">
-                <span>Confirmar E-mail</span>
-                <i></i>
-            </div>
-            <div class="inputbox">
-                <input type="text" required='required' name="" value="">
-                <span>Cidade</span>
-                <i></i>
-            </div>
-            <div class="inputbox">
-                <input type="text" required='required' name="" value="">
-                <span>Endereço</span>
-                <i></i>
-            </div>
-            <div class="inputbox">
-                <input type="password" required='required' name="" value="">
-                <span>Senha</span>
-                <i></i>
-            </div>
-            <div class="inputbox">
-                <input type="password" required='required' name="" value="">
-                <span>Confirmar Senha</span>
-                <i></i>
-            </div>
-            <div>
-                <button class="btn-sub" href='#'>Cadastrar</button>              
-            </div>
-        </div>
+        </form>    
     </div>
 </body>
 </html>
+{% endblock content %}

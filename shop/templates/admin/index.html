@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/2747ec91e0.js"></script>
     <link rel="shortcut icon" href="static/img/logo2.png" type="image/x-icon">
     <title>
@@ -36,18 +37,15 @@
                     <a href="/addcat"><button class="links-navbar" >Categoria</button></a>
                 </div>
             </div>
-            <li><a href="/admin/login" title="Login/Register">
-                <i class="fa-solid fa-user"></i>
-            </a>
-            </li>
             <li>
-                <a href="/logout" title="Logout">
-                    <i class="fa-solid fa-user-xmark"></i>
+                <a href="{{url_for('adminLogout')}}" title="Logout">
+                <i class="fa-solid fa-user-xmark"></i>
                 </a>
-            </li>
-            <li><a href="/admin" title="Área retrista">
-                <i class="fa-solid fa-user-lock"></i>
-            </a>
+            </li> 
+            <li>
+                <a href="{{url_for('register')}}" title="Register admin">
+                <i class="fa-solid fa-user"></i>
+                </a>
             </li>
         </ul>
     </nav>  

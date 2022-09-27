@@ -5,7 +5,7 @@ from .models import Register
 
 class CustomerRegisterForm(FlaskForm):
     name= StringField('Nome Completo:')
-    username= StringField('Username:')
+    username= StringField('Usuário:')
     email= StringField('Email:', [validators.Email(), validators.DataRequired()])
     password= PasswordField('Senha:', [validators.DataRequired(), validators.EqualTo('confirm', message='Both password must match.')])
     confirm= PasswordField('Confirmar Senha:', [validators.DataRequired()])

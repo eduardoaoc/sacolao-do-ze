@@ -7,29 +7,29 @@ from shop.admin.routes import category
 from .models import Category, AddProduct
 from .forms import Addproducts
 
+def categories():
+    categories= Category.query.join(AddProduct, (Category.id==AddProduct.category_id)).all()
+    return categories
 
 #página inicial/ todos produtos
 @app.route('/')
 def home():
     page= request.args.get('page', 1, type=int)
     products= AddProduct.query.filter(AddProduct.stock > 0).order_by(AddProduct.id.desc()).paginate(page=page, per_page= 8)
-    categories= Category.query.join(AddProduct, (Category.id==AddProduct.category_id)).all()
-    return render_template('produtos/index.html', products=products, categories=categories)
+    return render_template('produtos/index.html', products=products, categories=categories())
 
 #pequisa de produtos, etc.
 @app.route('/result')
 def result():
     searchword= request.args.get('q')
     products= AddProduct.query.msearch(searchword, fields=['name', 'desc'], limit=6)
-    categories= Category.query.join(AddProduct, (Category.id==AddProduct.category_id)).all()
-    return render_template('produtos/resultados.html', products=products, categories=categories)
+    return render_template('produtos/resultados.html', products=products, categories=categories())
 
 #página individual de um produto
 @app.route('/product/<int:id>')
 def single_page(id):
-    categories= Category.query.join(AddProduct, (Category.id==AddProduct.category_id)).all()
     product= AddProduct.query.get_or_404(id)
-    return render_template('produtos/single_page.html', product=product, categories=categories)
+    return render_template('produtos/single_page.html', product=product, categories=categories())
 
 #página de produtos por categoria
 @app.route('/categories/<int:id>')
@@ -37,8 +37,7 @@ def get_category(id):
     page= request.args.get('page', 1, type=int)
     get_cat= Category.query.filter_by(id=id).first_or_404()
     get_cat_prod= AddProduct.query.filter_by(category=get_cat).paginate(page=page, per_page= 6)
-    categories= Category.query.join(AddProduct, (Category.id==AddProduct.category_id)).all()
-    return render_template('produtos/index.html', get_cat_prod=get_cat_prod, categories=categories, get_cat=get_cat)
+    return render_template('produtos/index.html', get_cat_prod=get_cat_prod, categories=categories(), get_cat=get_cat)
 
 
 
@@ -120,7 +119,7 @@ def addproduct():
         flash(f"O produto '{name}' foi adicionado ao banco de dados.", 'success')
         db.session.commit()
         return redirect(url_for('admin'))
-    return render_template('produtos/addproduto.html' , title='Add product page', form=form, categories= categories)    
+    return render_template('produtos/addproduto.html' , title='Add product page', form=form, categories=categories)    
 
 #atualiza o produto selicionado
 @app.route('/updateproduct/<int:id>', methods=['GET', 'POST'])
