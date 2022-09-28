@@ -7,7 +7,7 @@
 .container{
   justify-content: center;
   position: relative;
-  display: inline-flex;
+  display: inline-block;
   flex-wrap: wrap;  
   margin-bottom: 20px;
 }
@@ -32,7 +32,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #4E944F;
+  background: #a7e7a8;
   clip-path: circle(150px at 80% 20%);
   transition: 0.5s ease-in-out;
 }
@@ -42,7 +42,7 @@
 }
 
 .container .card:after{
-  content: 'Sacolão Do Zé';
+  content: '';
   position: absolute;
   top: 50%;
   left: -5%;
@@ -55,8 +55,8 @@
   margin-left: -3px;
   font-family: 'Inter';
   position: static;
-  width: 45px;
-  height: 30px;
+  width: 35px;
+  height: 25px;
   font-weight: 800;
   color: #ffffff;
   background: red;
@@ -160,8 +160,6 @@
 }
 
 
-
-
 /*BOTÃO ADCIONAR AO CARRINHO*/
 .btn-add{
   margin-top: 60px;
@@ -178,86 +176,6 @@
 }
 .btn-add:hover{
   background: rgb(41, 153, 43);
-}
-
-
-/*VIDEO*/
-.video-content{
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -30;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  min-width: 300px;
-}
-.home{
-  display: flex;
-  background-size: cover;
-  height: 100vh;
-  min-height: 500px;
-}
-.home .max-width{
-  margin: auto 0 auto 40px;
-}
-.home .home-content{
-  font-family: 'Lobster';
-  margin-top: 300px;
-  margin-left: -650px;
-}
-.home .home-content .text-1{
-  text-shadow: -2px 3px 3px rgb(54, 54, 54);
-  color: #ffffff;
-  font-size: 27px;
-}
-.home .home-content .text-2{
-  text-shadow: -1px 2px 2px rgb(54, 54, 54);
-  color: rgb(71, 189, 73);
-  font-size: 75px;
-  font-weight: 500;
-}
-.home .home-content .text-3{
-  text-shadow: -2px 3px 3px rgb(54, 54, 54);
-  font-size: 40px;   
-  color: #ffffff;
-}
-section::before{
-  content: '';
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 80px;
-  background: linear-gradient(to top, #ffffff,transparent);
-  z-index: 1000;
-}
-section{
-  position: relative;
-  width: 100%;
-  height: 80vh;
-  padding: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-section img{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-}
-
-
-/*BANNER IMAGE*/
-.banner-content{
-  position: relative;
-  width: 75%;
-  height: 100% ;
-  z-index: 999;
-  right: 0px;
 }
 
 
@@ -399,4 +317,25 @@ input[type=search]::placeholder{
 }
 .btn-search:hover{
   background: rgb(41, 153, 43);
+}
+
+/*BOTÃO RODA PÉ POR PÁGINAS*/
+.btn-page{
+  margin-left: 45%;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+.btn-perpage a{
+  color: #ffffff;
+  text-decoration: none;
+  background: #4E944F;
+  font-family: 'Inter';
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  margin-top: 0px;
+}
+.btn-perpage a:hover{
+  background-color: #21a823;
 }

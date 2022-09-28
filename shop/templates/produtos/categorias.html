@@ -60,7 +60,6 @@
     <h1>{{get_cat.name}}</h1>
 </div>
 {% for get_cat in get_cat_prod.items %}
-
 <div class="container">
     <div class="card">
         <div class="imgBx">
@@ -72,16 +71,37 @@
         {% endif %}
         </div>
         <div class="contentBx">
-        <h2>{{get_cat.name}}</h2>
-        <h3>R$ {{get_cat.price}}</h3>   
+            <h2>{{get_cat.name}}</h2>
+            <h3>R$ {{get_cat.price}}</h3>   
             <form action="{{url_for('AddCart')}}" method="post">
-            <input type="hidden" name="get_cat_id" value="{{get_cat.id}}">
-            <a href="#">
-                <button class="btn-add" type="submit">Adicionar</button>  
-            </a>     
-            <input type="hidden" name="quantity" id="" value="1" min="1" max="{{get_cat.stock}}">  
+                <input type="hidden" name="get_cat" value="{{get_cat.id}}">
+                <a>
+                    <button class="btn-add" type="submit">Adicionar</button>  
+                </a>     
+                <input type="hidden" name="quantity" id="" value="1" min="1" max="{{get_cat.stock}}">  
             </form>        
         </div>
+    </div>
+</div>
+{% endfor %}   
+<div class="btn-page">
+    <div class="btn-perpage">
+        {% if get_cat_prod.has_prev%}
+        <a href="{{url_for('get_category', id=get_cat.id ,page=get_cat_prod.prev_num)}}">Voltar</a>
+        {% endif %}
+        {% if get_cat_prod.total>8 %}
+        {% for page_num in get_cat_prod.iter_pages(left_edge=1,right_edge=2, left_current=1, right_current=2) %}
+            {% if page_num %}
+                {% if get_cat_prod.page == page_num %}
+                    <a href="{{url_for('get_category', id=get_cat.id,page=page_num)}}">{{page_num}}</a>
+                {% else %}
+                    <a href="{{url_for('get_category', id=get_cat.id, page=page_num)}}">{{page_num}}</a>
+                {% endif %}
+            {% else %}
+            ...
+            {% endif %}
+        {% endfor %}
+        {% endif %}
     </div>
 </div>
 <script src="static/js/script.js"></script>
@@ -93,7 +113,5 @@
     list.classList.toggle('newlist');
     });
 </script>
-{% endfor %}     
 {% include 'footer.html'%}
-
 {% endblock content %}

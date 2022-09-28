@@ -33,7 +33,7 @@ ul{
     text-shadow: -2px 3px 3px rgb(0, 0, 0);
     font-family: 'Inter', sans-serif;
     background: #4E944F;
-    position: fixed;
+    position: static;
     height: 90px;
     display: flex;
     align-items: center;
@@ -120,7 +120,7 @@ ul{
     font-family: 'Inter';
     position:absolute;
     top:15%;
-    left:400px;
+    left: 20%;
     border-collapse: collapse;
     margin: 5px 0;
     margin-bottom: 50px;
@@ -159,17 +159,14 @@ ul{
 .content-table2{
     color: black;
     font-family: 'Inter';
-    position:absolute;
-    top: 350px;
-    left:400px;
-    border-collapse: collapse;
-    margin: 5px 0;
-    margin-bottom: 50px;
+    position: fixed;
+    top: 90%;
+    left: 20%;
+    border-collapse:separate;
+    margin: 35px 50px;
     font-size: 0.9em;
     min-width: 1000px;
     border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .content-table2 td{
@@ -323,14 +320,5 @@ ul{
  .back-shop:hover{
     background: rgb(41, 153, 43);
 }
-/*BANNER IMAGE*/
-.banner-content{
-    margin-top: 10%;
-    position: relative;
-    width: 75%;
-    height: 100% ;
-    z-index: 1200;
-    right: 0px;
-}
-  
+
   

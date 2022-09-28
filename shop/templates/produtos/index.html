@@ -13,23 +13,34 @@
     </title>
 </head>
 <body>
-{% include 'navbar.html' %}
-<section class="home" id="home">
-    <div class="max-width">
-        <div class="home-content">
-            <div class="video-content">
-                <video src="{{ url_for('static', filename='img/video.mp4') }}" autoplay muted loop></video>
-            </div>
-            <div class="text-1" >Olá, seja bem-vindo ao</div>
-            <div class="text-2" >Sacolão do <span>Zé</span></div>
-            <div class="text-3" >Qualidade & Confiança<span> você encontra aqui.</span></div>
-        </div>
-    </div>
-</section>
+{% include 'navbar.html' %} 
+<div class="banner-content">
+    <img src="{{ url_for('static', filename='img/img.jpg') }}" style="margin-top: 55px; width: 100vw; position: relative; z-index: -1;">
+</div>
 <h1 style="margin-left: 35%; margin-top: 10px; font-size: 70px; text-shadow: 1px 2px 3px rgb(141, 139, 139);
 color:#4E944F; font-family: 'Lobster';"
 >Todos os produtos</h1>
 {% include 'card.html' %}
+<div class="btn-page">
+    <div class="btn-perpage">
+        {% if products.has_prev %}
+        <a href="{{url_for('home', page=products.prev_num)}}">Voltar</a>
+        {% endif %}
+        {% if products.total > 10 %}
+        {% for page_num in products.iter_pages(left_edge=1,right_edge=2, left_current=1, right_current=2) %}
+            {% if page_num %}
+                {% if products.page == page_num %}
+                    <a href="{{url_for('home', page=page_num)}}">{{page_num}}</a>
+                {% else %}
+                    <a href="{{url_for('home', page=page_num)}}">{{page_num}}</a>
+                {% endif %}
+            {% else %}
+            ...
+            {% endif %}
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>     
 {% include 'footer.html' %}
 </body>
 </html>

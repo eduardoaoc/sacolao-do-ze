@@ -15,6 +15,7 @@
 <body>
     {% include 'navbar.html' %}
     {% include '_messages.html' %}
+
     <table class="content-table">
         <thead>
             <tr>
@@ -60,7 +61,7 @@
                     <a href="{{url_for('deleteitem', id=key)}}" class="btn-delete" 
                     method="POST" type="submit" class="btn-delete">Remove</a>
                 </td>
-            {% endfor %}
+            {% endfor %}   
             </tr>
         </tbody>
     </table>

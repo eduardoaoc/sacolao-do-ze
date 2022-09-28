@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
 *{
+  color: #ffffff;
   margin: 0;
   scroll-behavior: smooth;
 }
@@ -9,8 +10,8 @@
   flex-wrap: wrap;
   position: relative;
   display: flex;
-  margin-bottom: 5%;
-  margin-top: 5%;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .container .card{
@@ -33,7 +34,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #4E944F;
+  background: #a7e7a8;
   clip-path: circle(150px at 80% 20%);
   transition: 0.5s ease-in-out;
 }
@@ -43,7 +44,7 @@
 }
 
 .container .card:after{
-  content: 'Sacolão Do Zé';
+  content: '';
   position: absolute;
   top: 50%;
   left: -5%;
@@ -79,7 +80,6 @@
 .container .card:hover .imgBx{
   top: 0%;
   transform: translateY(0%);
-    
 }
 
 .container .card .imgBx img{
@@ -112,9 +112,7 @@
 .container .card .contentBx h2{
   margin-top: 20px;
   font-size: 25px;
-
 }
-
 .container .card .contentBx .size, .container .card .contentBx .color {
   display: flex;
   justify-content: center;
@@ -125,15 +123,12 @@
   padding-top: 0;
   padding-bottom: 0;
 }
-
-
 .container .card .contentBx .size h3, .container .card .contentBx .color h3{
   font-weight: 500;
   font-size: 14px;
   text-transform: uppercase;
   margin-right: 10px;
 }
-
 .container .card .contentBx a{
   border-radius: 4px;
   margin-top: 10px;
@@ -142,14 +137,11 @@
   transition: 0.5s;
   margin-top: 0;
 }
-
 .container .card:hover .contentBx a{
   opacity: 1;
   transform: translateY(0px);
-  transition-delay: 0.5s;
-  
+  transition-delay: 0.5s; 
 }
-
 /* TÍTULO DAS PÁG*/
 h1{
   margin-left: 35%; 
@@ -159,9 +151,6 @@ h1{
   color:#4E944F; 
   font-family: 'Lobster';
 }
-
-
-
 
 /*BOTÃO ADCIONAR AO CARRINHO*/
 .btn-add{
@@ -181,73 +170,23 @@ h1{
   background: rgb(41, 153, 43);
 }
 
-
-/*VIDEO*/
-.video-content{
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -30;
-  width: 100vw;
-  height: 100%;
-  overflow: hidden;
-  min-width: 300px;
-}
-.home{
-  display: flex;
-  background-size: cover;
-  height: 100vh;
-  min-height: 500px;
-}
-.home .max-width{
-  margin: auto 0 auto 40px;
-}
-.home .home-content{
-  font-family: 'Lobster';
-  margin-top: 300px;
-  margin-left: -650px;
-}
-.home .home-content .text-1{
-  text-shadow: -2px 3px 3px rgb(54, 54, 54);
+/*BOTÃO RODA PÉ POR PÁGINAS*/
+.btn-page{
+  margin-left: 45%;
   color: #ffffff;
-  font-size: 27px;
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
-.home .home-content .text-2{
-  text-shadow: -1px 2px 2px rgb(54, 54, 54);
-  color: rgb(71, 189, 73);
-  font-size: 75px;
-  font-weight: 500;
-}
-.home .home-content .text-3{
-  text-shadow: -2px 3px 3px rgb(54, 54, 54);
-  font-size: 40px;   
+.btn-perpage a{
   color: #ffffff;
+  text-decoration: none;
+  background: #4E944F;
+  font-family: 'Inter';
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
 }
-section::before{
-  content: '';
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 80px;
-  background: linear-gradient(to top, #ffffff,transparent);
-  z-index: 1000;
+.btn-perpage a:hover{
+  background-color: #21a823;
 }
-section{
-  position: relative;
-  width: 100%;
-  height: 80vh;
-  padding: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-section img{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-}
-
