@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+.navbar a{
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: 0.3s;
+}
+.navbar a:hover{
+    font: bold;
+    opacity: 0.7;
+    color: rgb(71, 189, 73);
+}
+ul{
+    list-style: none;
+}
+
+/*NAVBAR*/
+.navbar{
+    text-shadow: -2px 3px 3px rgb(0, 0, 0);
+    font-family: 'Inter', sans-serif;
+    background: #4E944F;
+    position: fixed;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+    color: rgb(255, 255, 255);
+    z-index: 1100;
+    box-shadow: 0px 2px 3px #353535;
+}
+.nav-list{
+    color: #ffffff;
+    list-style: none;
+    display: flex;
+    margin-top: 15px;
+}
+.nav-list li{
+    margin-left: 15px;
+}
+.navbar .logo img{
+    width: 130px;
+    height: 100px;
+}
+
+/*DROPDOWN MENU*/
+.conteiner{
+    position: relative;
+}
+
+.links-navbar{
+    letter-spacing: 1px;
+    transition: 0.3s;   
+}
+.links-navbar:hover{
+    background-color: none;
+    transform: scale(1.1);
+}
+.list{
+    margin-right: 21px;
+    margin-top: 5%;
+    position: absolute;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.3s;
+}
+.newlist{
+    transform: scaleY(1);
+}
+.click{
+    outline: none;
+    border: none;
+    background-color: #4E944F;
+    text-shadow: -2px 3px 3px rgb(0, 0, 0);
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: 0.3s;
+    margin-left: 10px;
+    margin-right: 25px;
+}
+.links-navbar{
+    margin-left: 55px;
+    outline: none;
+    border: none;
+    background: #4E944F;
+    width: 150px;
+    height: 50px;
+    text-shadow: -2px 2px 2px rgb(0, 0, 0);
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: 0.3s;
+
+}
+.links-navbar:hover {
+    color: rgb(11, 185, 11);
+}
+.click:hover{
+    color: rgb(71, 189, 73);
+}
+
+/*FORMULÁRIO DE PESQUISA*/
+input[type=search]{ 
+    font-family: 'Inter', sans-serif;
+    right: 50%;
+    background: #3d813e;
+    border:none;
+    text-align: center;
+    border-radius: 8px;
+	color: rgb(255, 255, 255);  
+	cursor: pointer;
+    outline: none;
+    min-height: 120%;    
+    
+}
+input[type=search]::placeholder{ 
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    opacity: 10;
+}
+.btn-search{
+    margin-left: 3px;
+    margin-right: 35px;
+    width: 90px;
+    height: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    letter-spacing: 1px;
+    color: #ffffff;
+    background: #3d813e;
+}
+.btn-search:hover{
+    background: rgb(41, 153, 43);
+}
+

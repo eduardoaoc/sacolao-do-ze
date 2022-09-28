@@ -1,4 +1,3 @@
-from email.policy import default
 from shop import db, login_manager
 from datetime import datetime
 from flask_login import UserMixin
@@ -23,10 +22,8 @@ class Register(db.Model, UserMixin):
     def __repr__(self):
         return '<Register %r>' % self.name
 
-
 class JsonEcodeDict(db.TypeDecorator):
     impl= db.Text
-
     def process_bind_param(self, value, dialect):
         if value is None:
             return '{}'
@@ -37,7 +34,6 @@ class JsonEcodeDict(db.TypeDecorator):
             return '{}'
         else:
             return json.loads(value) 
-
 
 class CustomerOrder(db.Model):
     id= db.Column(db.Integer, primary_key=True)

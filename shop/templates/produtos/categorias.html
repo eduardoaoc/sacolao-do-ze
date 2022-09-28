@@ -1,0 +1,99 @@
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/categoria.css')}}">
+<script src="https://kit.fontawesome.com/2747ec91e0.js"></script>
+<nav class="navbar">
+    <div class="logo">
+        <a href="/" >
+            <img src="{{url_for('static', filename='img/logo2.png')}}">
+        </a>
+    </div>
+    <ul class="nav-list">
+        <li><a href="/" title="Ínicio">
+            <i class="fa-solid fa-house" style="margin-right: 15px;"></i>
+        </a></li>
+        <div class="conteiner">
+            <button class="click">
+                <i class="fa-solid fa-bars" style="margin-top: 2px; margin-right: 5px;"></i>
+                Categorias
+            </button>
+            <div class="list">
+                {% for category in categories %}
+                <a href="{{url_for('get_category', id=category.id)}}">
+                    <button class="links-navbar" >{{category.name}}</button>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <form class="d-flex" role="search" action="{{url_for('result')}}">
+            <input type="search"  placeholder="Pesquisar.." aria-label="Search" name="q">
+                <button class="btn-search" type="submit">Pesquisar</button>
+        </form>          
+        <li>
+            <a href="/carts" title="Carrinho">
+                <i class="fa-solid fa-cart-shopping">
+                <span style="color: rgb(49, 211, 84); font-family: 'Verdana'; font: bold;">{{session['Shoppingcart']|length}}</span>
+                </i>
+            </a>
+        </li>  
+        <li>
+        {% if current_user.is_authenticated %}
+            <a href="{{url_for('customerLogout')}}" title="Logout">
+                <i class="fa-solid fa-user-xmark"></i>
+                <span style="color: rgb(49, 211, 84); font-family: 'Verdana'; text-transform: uppercase;">{{current_user.name}}</span>
+            </a>
+        </li> 
+        {% else %}
+        <li>
+            <a href="{{url_for('customerLogin')}}" title="Login/Register">
+            <i class="fa-solid fa-user"></i>
+            </a>
+        </li>
+        {% endif %}
+        <li>
+            <a href="/admin/login" title="Área retrista">
+            <i class="fa-solid fa-user-lock"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+<div class="title-page">
+    <h1>{{get_cat.name}}</h1>
+</div>
+{% for get_cat in get_cat_prod.items %}
+
+<div class="container">
+    <div class="card">
+        <div class="imgBx">
+        <a href="{{url_for('single_page', id=get_cat.id)}}" title="Clique para ver mais detalhes.">
+            <img src="{{ url_for('static', filename='images/' + get_cat.image_1) }}">
+        </a>
+        {% if get_cat.discount > 0 %}
+        <p>-{{get_cat.discount}}%</p>
+        {% endif %}
+        </div>
+        <div class="contentBx">
+        <h2>{{get_cat.name}}</h2>
+        <h3>R$ {{get_cat.price}}</h3>   
+            <form action="{{url_for('AddCart')}}" method="post">
+            <input type="hidden" name="get_cat_id" value="{{get_cat.id}}">
+            <a href="#">
+                <button class="btn-add" type="submit">Adicionar</button>  
+            </a>     
+            <input type="hidden" name="quantity" id="" value="1" min="1" max="{{get_cat.stock}}">  
+            </form>        
+        </div>
+    </div>
+</div>
+<script src="static/js/script.js"></script>
+<script src="static/js/mobile.js"></script>
+<script>
+    let click= document.querySelector('.click');
+    let list= document.querySelector('.list');
+    click.addEventListener("click",()=>{
+    list.classList.toggle('newlist');
+    });
+</script>
+{% endfor %}     
+{% include 'footer.html'%}
+
+{% endblock content %}

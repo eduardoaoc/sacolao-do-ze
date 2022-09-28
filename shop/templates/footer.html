@@ -1,0 +1,71 @@
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/footer.css')}}">
+<footer>
+    <div class="contato" id="contato">
+        <div class="contet">
+            <div class="left-side">
+                <div class="adress details">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <div class="topic">Endereço</div>
+                    <div class="text-one">Av. dos Ipês, 415</div>
+                    <div class="text-two">Sarzedo</div>
+                </div>
+                <div class="adress details">
+                    <i class="bi bi-telephone-fill"></i>
+                    <div class="topic">Contatos</div>
+                    <div class="text-one">3333-0000</div>
+                    <div class="text-two">(31)9 9999-0000</div>
+                </div>
+                <div class="adress details">
+                    <i class="bi bi-envelope-fill"></i>
+                    <div class="topic">Email</div>
+                    <div class="text-one">sacolaodoze@contato.com</div>
+                    <div class="text-two">sac@sacolaodoze.com</div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="topic-box" style="text-shadow: 0px 3px 3px #041b04;">Envie sua mensagem.</div>
+                <br>
+                <br>
+                <p>
+                    Críticas, dúvidas e sugestôes sempre são bem-vindas para que podemos 
+                    melhorar nossos serviços diariamente.
+                </p>
+                <form action="#">
+                    <div class="input-box">
+                        <input type="text" placeholder="Digite seu nome completo." style="font-family: 'Verdana';">
+                    </div>
+                    <div class="input-box">
+                        <input type="email" placeholder="Digite seu email." style="font-family: 'Verdana';">
+                    </div>
+                    <div class="input-box mesage-box" >
+                        <textarea placeholder="Digite sua mensagem." style="font-family: 'Verdana';"></textarea>
+                    </div>
+                    <button class="btn-add" href='#' value="Enviar" >Enviar</button>                  
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer-content" >
+        <ul class="polices" >
+            <li><a href="#" >Politica de Privacidade</a></li>
+            <li><a href="#">Politica de Devolução</a></li>
+            <li><a href="#">Politica de Entrega</a></li>
+        </ul>
+        <br>
+        <br>
+        <hr size="3" width="30%" color='#83BD75'>
+        <br>
+        <h3>Sacolão do Zé | Desde 2006.</h3>
+        <p> Em todos os lares do Brasil.</p>
+        <ul class="socials">
+            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+            <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+            <li><a href="#"><i class="bi bi-whatsapp"></i></a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>copyrightⒸ 2022. designed by <a href="https://github.com/eduardoaoc">Eduardo A.</a></p>
+    </div>
+</footer>
+{% endblock content %}

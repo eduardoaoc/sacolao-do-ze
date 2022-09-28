@@ -55,9 +55,9 @@
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Categoria</th>
-                    <th>Qnt</th>
-                    <th>Preço</th>
                     <th>Desconto</th>
+                    <th>Preço</th>
+                    <th>Qnt</th>
                     <th>Imagem</th>
                     <th>Editar</th>
                     <th>Remover</th>
@@ -69,9 +69,9 @@
                     <td>{{loop.index}}</td>
                     <td>{{product.name}}</td>
                     <td>{{product.category.name}}</td>
-                    <td>{{product.stock}}</td>
-                    <td>{{product.price}}</td>
                     <td>-{{product.discount}}%</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.stock}}</td>
                     <td>
                         <img src="{{url_for('static', filename='images/' + product.image_1)}}" alt="Product Image" width="45" height="50">
                     </td>

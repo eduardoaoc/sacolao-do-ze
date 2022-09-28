@@ -55,9 +55,8 @@ def getCart():
         discount= (product['discount']/100) * float(product['price'])
         subtotal+= float(product['price']) * int(product['quantity'])
         subtotal -= discount
-        tax= ("%.2f" % (.06 * float(subtotal)))
         total= float("%.2f" % (1.06 * subtotal))
-    return render_template('produtos/carrinho.html', categories=categories, total=total, tax=tax)    
+    return render_template('produtos/carrinho.html', categories=categories, total=total)
 
 
 #carrinho vázio

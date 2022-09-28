@@ -1,3 +1,4 @@
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/2747ec91e0.js"></script>
     <link rel="shortcut icon" href="static/img/logo2.png" type="image/x-icon">
     <title>
@@ -14,33 +13,75 @@
     </title>
 </head>
 <body>
-    <!--NAVBAR-->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="/" >
-                <img src="{{url_for('static', filename='img/logo2.png')}}">
-            </a>
-        </div>
-        <ul class="nav-list">
-            <li><a href="/" title="Ínicio">
-                <i class="fa-solid fa-house"></i>
-            </a></li>
-            <li><a href="/">Verduras & legumes</a></li>
-            <li><a href="/">Frutas</a></li>
-            <li><a href="/">Contato</a></li>
-            <li><a href="/carts" title="Carrinho">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-            </li>
-            <li><a href="/login" title="Login/Register">
-                <i class="fa-solid fa-user"></i>
-            </a>
-            </li>
-            <li><a href="/admin" title="Área retrista">
-                <i class="fa-solid fa-user-lock"></i>
-            </a>
-            </li>
-        </ul>
-    </nav>
+    {% include 'navbar.html' %}
+    {% include '_messages.html' %}
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Imagem</th>
+                <th>Nome</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+                <th>Desconto</th>
+                <th>SubTotal</th>
+                <th>Atualizar</th>
+                <th>Remover</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, product in session['Shoppingcart'].items() %}
+            {% set discount =  "%0.2f" | format((product.discount/100) * product.price|float) %}
+            <tr>
+                <td>{{loop.index}}</td>                  
+                <td>
+                     <img src="{{url_for('static', filename='images/' + product.image)}}" alt="{{product.name}}" width="50" height="45">
+                </td>
+                <td>
+                    <a>{{product.name}}</a>
+                </td>   
+                <form action="{{url_for('updatecart', code=key)}}" method="post">          
+                    <td>
+                        <input type="number" name='quantity' min='1' max='10' value="{{product.quantity}}">
+                    </td>                   
+                    <td>R${{"%.2f"|format(product.price)}}</td>
+                    {% if product.discount > 0 %}
+                    <td>-R${{discount}}</td>     
+                    {% else %} 
+                    <td></td>      
+                    {% endif %}     
+                    {% set subtotal = product.quantity|int * product.price|float %}
+                    <td>R${{"%.2f"|format((subtotal|float) - discount|float)}}</td>
+                    <td>
+                        <button type='submit' class="btn-atualizar">Atualizar</button>
+                    </td>
+                </form>     
+                <td>
+                    <a href="{{url_for('deleteitem', id=key)}}" class="btn-delete" 
+                    method="POST" type="submit" class="btn-delete">Remove</a>
+                </td>
+            {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    <table class="content-table2">
+        <tbody>
+            <tr>
+                <td>
+                    <a href="{{url_for('get_order')}}" class="btn-add" 
+                    style="text-decoration: none;">Pedir agora</a>
+                </td>
+                <td width="30%"></td>
+                <td style="font-weight: 900; font-size: 26px;">
+                    Total: R${{total}}
+                </td>
+                <td> 
+                    <a href="{{url_for('clearcart')}}" class="btn-clear">Limpar Carrinho</a>
+                </td>
+            </tr>
+
+        </tbody>    
+    </table>
 </body>      
 </html>  
+{% endblock content %}

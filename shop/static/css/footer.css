@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+/*CONTATO*/
+.contato{
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    min-width: 100%;
+    background: rgb(43, 88, 44);
+    padding: 5px 90px 30px 40px;
+}
+
+.contato .contet{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contato .contet .left-side{
+    line-height: 1.6;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    position: relative;
+}
+.contet .left-side::before{
+    content: '';
+    position: absolute;
+    height: 70%;
+    width: 3px;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #83BD75;
+
+}
+.contet .left-side .details{
+    margin: 14px;
+    text-align: center;
+}
+.contet .left-side .details i{
+    font-size: 35px; 
+    color: rgb(71, 189, 73);
+    margin-bottom: 10px;
+}
+.contet .left-side .details i:hover{
+    color: rgb(7, 255, 11);
+
+}
+.contet .left-side .details .topic{
+    font-size: 18px;
+    font-weight: 500;
+}
+.contet .left-side .details .text-one,
+.contet .left-side .details .text-two{
+    font-size: 14px;
+    color: aliceblue;
+}
+
+.containe .contet .right-side{
+    width: 75%;
+    margin-left: 75px;        
+}
+.contet .right-side .topic-box{
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(71, 189, 73);
+} 
+.right-side .input-box{
+    height: 50px;
+    width: 100%;
+    margin: 12px 0;
+
+}
+.right-side .input-box input,
+.right-side .input-box textarea{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: rgb(211, 211, 211);
+    border-radius: 6px;
+    padding: 0 15px;
+    resize: none;
+}
+.right-side .mesage-box{
+    min-height: 6px;
+}
+.right-side .input-box textarea{
+    padding-top:  6px;
+}
+
+/*RODAPÉ DO SITE*/
+footer{
+    background: rgb(43, 88, 44);
+    height: 100%;
+    width: 100vw;
+    font-family: 'Familjen Grotesk', sans-serif;
+    padding-top: 40px;
+    color: #fff;
+}
+.footer-content a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.footer-content a:hover{
+    color: rgb(27, 192, 30);
+}
+
+.footer-content{
+    margin-top: 15px;
+    background: rgb(35, 63, 36);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3{  
+    color: #fff;
+    font-family: 'Lobster';
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 20px;
+}
+
+.footer-bottom{   
+    background: rgb(35, 63, 36);
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+}
+.footer-bottom a:hover{
+    color: rgb(27, 192, 30);
+}
+
+.polices li{
+    margin-top: 20px;
+}
+
+.socials{  
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0rem 1 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+    justify-content: space-between;
+}
+.socials a{
+    text-decoration: none;
+}
+
+.socials a i{
+    font-size: 3rem;
+    transition: color .2s ease;
+}
+
+.btn-add{
+    margin-bottom: 15px;
+    margin-top: 10px;
+    width: 40%;
+    padding: 10px 0px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-weight: 500;
+    color: #ffffff;
+    background: rgb(87, 170, 89);
+    cursor: pointer;
+    box-shadow: -1px 3px 3px #000000;
+ }
+.btn-add:hover{
+    background: rgb(41, 153, 43);
+}

@@ -15,7 +15,7 @@ def categories():
 @app.route('/')
 def home():
     page= request.args.get('page', 1, type=int)
-    products= AddProduct.query.filter(AddProduct.stock > 0).order_by(AddProduct.id.desc()).paginate(page=page, per_page= 8)
+    products= AddProduct.query.filter(AddProduct.stock > 0).order_by(AddProduct.id.desc()).paginate(page=page, per_page=10)
     return render_template('produtos/index.html', products=products, categories=categories())
 
 #pequisa de produtos, etc.
@@ -37,7 +37,7 @@ def get_category(id):
     page= request.args.get('page', 1, type=int)
     get_cat= Category.query.filter_by(id=id).first_or_404()
     get_cat_prod= AddProduct.query.filter_by(category=get_cat).paginate(page=page, per_page= 6)
-    return render_template('produtos/index.html', get_cat_prod=get_cat_prod, categories=categories(), get_cat=get_cat)
+    return render_template('produtos/categorias.html', get_cat_prod=get_cat_prod, categories=categories(),  get_cat=get_cat)
 
 
 
