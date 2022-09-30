@@ -1,8 +1,7 @@
 from flask import redirect, render_template, url_for, flash, request, session, current_app
 import secrets, os
 
-from shop import app 
-from shop import db, photos, search
+from shop import  db, app, photos, produtos, search
 from shop.admin.routes import category
 from .models import Category, AddProduct
 from .forms import Addproducts
@@ -11,27 +10,23 @@ def categories():
     categories= Category.query.join(AddProduct, (Category.id==AddProduct.category_id)).all()
     return categories
 
-#página inicial/ todos produtos
 @app.route('/')
 def home():
     page= request.args.get('page', 1, type=int)
     products= AddProduct.query.filter(AddProduct.stock > 0).order_by(AddProduct.id.desc()).paginate(page=page, per_page=10)
     return render_template('produtos/index.html', products=products, categories=categories())
 
-#pequisa de produtos, etc.
 @app.route('/result')
 def result():
     searchword= request.args.get('q')
     products= AddProduct.query.msearch(searchword, fields=['name', 'desc'], limit=6)
     return render_template('produtos/resultados.html', products=products, categories=categories())
 
-#página individual de um produto
 @app.route('/product/<int:id>')
 def single_page(id):
     product= AddProduct.query.get_or_404(id)
     return render_template('produtos/single_page.html', product=product, categories=categories())
 
-#página de produtos por categoria
 @app.route('/categories/<int:id>')
 def get_category(id):
     page= request.args.get('page', 1, type=int)
@@ -42,7 +37,6 @@ def get_category(id):
 
 
 '''------ADMIN COMANDS URLs------'''
-#adiciona uma categoria
 @app.route('/addcat', methods=['GET', 'POST'])
 def addcat():
     '''if 'email' not in session:
@@ -58,7 +52,6 @@ def addcat():
         return redirect(url_for('addcat'))
     return render_template('produtos/addcat.html')    
 
-#atualiza uma categoria selecionada
 @app.route('/updatecat/<int:id>', methods=['GET', 'POST'])
 def updatecat(id):
     '''if 'email' not in session:
@@ -91,7 +84,6 @@ def deletecat(id):
         flash(f'Ocorreu algum erro.','danger')    
     return redirect(url_for('category'))
   
-#adiciona um produto
 @app.route('/addproduct', methods=['POST', 'GET'])
 def addproduct():
     '''if 'email' not in session:
@@ -121,7 +113,6 @@ def addproduct():
         return redirect(url_for('admin'))
     return render_template('produtos/addproduto.html' , title='Add product page', form=form, categories=categories)    
 
-#atualiza o produto selicionado
 @app.route('/updateproduct/<int:id>', methods=['GET', 'POST'])
 def updateproduct(id):
     '''if 'email' not in session:
@@ -171,7 +162,6 @@ def updateproduct(id):
     form.discription.data= product.desc 
     return render_template('produtos/updateproduto.html', form=form, categories=categories, product=product)
 
-#remove um produto
 @app.route('/deleteproduct/<int:id>')
 def deleteproduct(id):
     '''if 'email' not in session:

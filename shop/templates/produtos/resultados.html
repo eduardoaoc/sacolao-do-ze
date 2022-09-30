@@ -1,3 +1,33 @@
 {% block content %}
-  
+{% include 'navbar.html' %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/card.css')}}">
+
+<div class="container">
+  {% for product in products %}
+  <div class="card">
+    <div class="imgBx">
+      <a href="{{url_for('single_page', id=product.id)}}" title="Clique para ver mais detalhes.">
+       <img src="{{ url_for('static', filename='images/' + product.image_1) }}">
+      </a>
+      {% if product.discount > 0 %}
+      <p>-{{product.discount}}%</p>
+      {% endif %}
+    </div>
+    <div class="contentBx">
+      <h2>{{product.name}}</h2>
+      <h3>R$ {{product.price}}</h3>   
+        <form action="{{url_for('AddCart')}}" method="post">
+          <input type="hidden" name="product_id" value="{{product.id}}">
+          <a href="#">
+            <button class="btn-add" type="submit">Adicionar</button>  
+          </a>     
+          <input type="hidden" name="quantity" id="" value="1" min="1" max="{{product.stock}}">  
+        </form>        
+    </div>
+  </div>
+  {%  endfor %}
+</div>
+<br>
+<br>
+{% include 'footer.html' %}
 {% endblock content %}
