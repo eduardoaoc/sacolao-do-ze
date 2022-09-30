@@ -147,12 +147,12 @@ body{
     margin-bottom: 3px;
     margin-top: 20px;
     width: 120px;
-    padding: 16px 0px;
+    padding: 12px 0px;
     border: none;
     border-radius: 6px;
     outline: none;
     font-weight: 500;
-    letter-spacing: 2px;
+    letter-spacing: 0.5px;
     color: #ffffff;
     background: rgb(78, 148, 79);
     cursor: pointer;

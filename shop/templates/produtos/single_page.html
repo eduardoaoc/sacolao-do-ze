@@ -1,6 +1,49 @@
+
 {% block content %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/single.css')}}">
 {% include 'navbar.html' %}
-
+<main>
+    <section>
+        <div class="container-single">
+            <div class="left-side">
+                <div class="itens">
+                    <div class="select-img">
+                        <img src="{{url_for('static', filename='images/' + product.image_1)}}" alt="{{product.name}}">
+                    </div>
+                    <div class="images-p">
+                        <div class="imgs">
+                            <img src="{{url_for('static', filename='images/' + product.image_1)}}" alt="{{product.name}}">
+                        </div>
+                        <div class="imgs">
+                            <img src="{{url_for('static', filename='images/' + product.image_2)}}" alt="{{product.name}}">
+                        </div>
+                        <div class="imgs">
+                            <img src="{{url_for('static', filename='images/' + product.image_3)}}" alt="{{product.name}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <h2>{{product.name}}</h2>
+                <hr width="65%" size="2" color="green">
+                <span class="type-title">100% ORGÂNICO & SEM AGROTÓXICO</span>
+                <br>
+                {% if product.discount > 0 %}
+                <span class="off">-{{product.discount}}% OFF</span>
+                {% endif %}
+                <br>
+                <p>{{product.desc}}</p>
+                <span class="price">R${{product.price}}</span>
+                <form action="{{url_for('AddCart')}}" method="POST">
+                    <label class="quantity">100g x </label>
+                    <input style="width: 30px; height: 30px; font-size: 16px;" type="number" name="quantity" id="" value="1" min="1" max="{{product.stock}}">
+                    <br>
+                    <input type="hidden" name="product_id" value="{{product.id}}">
+                    <button type="submit"  class="btn-adc">Adicionar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
 {% include 'footer.html' %}
 {% endblock content %}

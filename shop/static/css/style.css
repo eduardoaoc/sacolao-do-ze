@@ -157,6 +157,7 @@ ul{
 
 /*TABELA ORDER*/
 .content-table2{
+    margin-bottom: 10px;
     color: black;
     font-family: 'Inter';
     position: fixed;
@@ -206,19 +207,19 @@ ul{
 .btn-clear:hover{
     background: rgb(209, 3, 3);
 }
+
 .btn-atualizar{
+    font-family: 'Inter';
     margin-bottom: 3px;
-    margin-top: 10px;
     width: 90px;
     padding: 10px 8px;
     border: none;
     border-radius: 8px;
     outline: none;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    font-weight: 600;
+    letter-spacing: 1px;
     color: #ffffff;
     background: rgb(10, 135, 173);
-
     cursor: pointer;
     box-shadow: -1px 3px 3px #888787;
     text-decoration: none;
@@ -256,7 +257,6 @@ ul{
     border-radius: 8px;
     outline: none;
     font-weight: 500;
-    letter-spacing: 0.5px;
     color: #ffffff;
     background: rgb(182, 1, 1);
     cursor: pointer;
