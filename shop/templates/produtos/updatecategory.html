@@ -17,7 +17,7 @@
     <div class="box">       
         <div class="form">
             {% if updatecat %}
-            <h1>Atualizar Categoria</h1>
+            <h1>Atualizar <span style="color: rgb(82, 126, 73); font-family:'Lobster';">{{updatecat.name}}</span></h1>
             <form action="" method="POST">
                 <div class="inputbox">
                     <input type="text" name="category" id="form-control" value="{{updatecat.name}}">

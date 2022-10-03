@@ -30,7 +30,7 @@ body{
     top: -50%;
     left: -50%;
     width: 700px;
-    height: 600px;
+    height: 800px;
     background: linear-gradient(0deg, transparent, rgb(131, 189, 117), rgb(78, 148, 79));
     animation: animate 6s linear infinite;
     transform-origin: bottom right;
@@ -41,7 +41,7 @@ body{
     top: -50%;
     left: -50%;
     width: 700px;
-    height: 600px;
+    height: 800px;
     background: linear-gradient(0deg, transparent, rgb(131, 189, 117), rgb(78, 148, 79));
     animation: animate 6s linear infinite;
     transform-origin: bottom right;
