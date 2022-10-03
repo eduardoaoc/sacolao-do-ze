@@ -9,14 +9,14 @@ Projeto .....
 ![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/navbar.JPG) 
 
 ## Barra de navegação pós login
-![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/navbar-login.jpg) 
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/navbar-login.JPG) 
 
 ## Página Inicial
 ![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/hompage-1.jpg) 
-![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/hompage-2.jpg) 
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/homepage-2.JPG) 
 
 ## Conato/Rodapé
-![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/hompage-3.jpg) 
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/homepage-3.JPG) 
 
 ## Página de login do cliente
 ![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/login-cliente.JPG)
