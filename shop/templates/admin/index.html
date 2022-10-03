@@ -1,6 +1,6 @@
 {% block content %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,7 +57,7 @@
                     <th>Categoria</th>
                     <th>Desconto</th>
                     <th>Preço</th>
-                    <th>Qnt</th>
+                    <th>Qnt (g)</th>
                     <th>Imagem</th>
                     <th>Editar</th>
                     <th>Remover</th>
@@ -71,7 +71,7 @@
                     <td>{{product.category.name}}</td>
                     <td>-{{product.discount}}%</td>
                     <td>{{product.price}}</td>
-                    <td>{{product.stock}}</td>
+                    <td>{{product.stock}}g</td>
                     <td>
                         <img src="{{url_for('static', filename='images/' + product.image_1)}}" alt="Product Image" width="45" height="50">
                     </td>
@@ -84,7 +84,7 @@
                         <a href="{{url_for('deleteproduct', id=product.id)}}" class="btn-delete">
                             Remover
                         </a>
-                    </td>>
+                    </td>
                 </tr>  
             {% endfor %}
             </tbody>

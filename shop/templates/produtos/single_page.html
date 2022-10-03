@@ -1,6 +1,8 @@
 
 {% block content %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/single.css')}}">
+<link rel="shortcut icon" href="{{url_for('static', filename='img/logo2.png' )}}" type="image/x-icon">
+<script src="https://kit.fontawesome.com/2747ec91e0.js"></script>
 {% include 'navbar.html' %}
 <main>
     <section>
@@ -42,6 +44,33 @@
                     <button type="submit"  class="btn-adc">Adicionar</button>
                 </form>
             </div>
+        </div>
+        <div class="tabela">
+            <table class="content-table">
+                <thead style="font-size: 18px; background: rgb(88, 94, 88); color: #ffff;">
+                    <td>Tabela Nutricional - {{product.name}}<br>
+                        por cada 100g</td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Calorias: {{product.calorias}}g (KCAL)</td>   
+                    <tr>
+                        <td>Carboidratos: {{product.carboidrato}}g</td>   
+                    </tr>                   
+                    <tr>
+                        <td>Proteínas: {{product.proteinas}}g</td>                  
+                    </tr>
+                    <tr>
+                        <td>Fíbras: {{product.fibra}}g</td>                  
+                    </tr>
+                    <tr>
+                        <td>Gordura: {{product.fat}}g</td>                  
+                    </tr>
+                    <tr>
+                        <td>Sódio: {{product.sodio}}mg</td>                  
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 </main>

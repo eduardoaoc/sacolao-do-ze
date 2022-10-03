@@ -6,57 +6,67 @@
 Projeto .....
 
 ## Barra de navegação
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/) 
+![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/navbar.jpeg/) 
 
 ## Barra de navegação pós login
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/) 
+![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/navbar-login.jpeg/) 
 
 ## Página Inicial
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/) 
+![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/homepage-1.jpeg/) 
+![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/homepage-2.jpeg/) 
+## Conato/Rodapé
+![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/homepage-3.jpeg/) 
 
 ## Página de login do cliente
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/)
+![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/login-cliente.jpeg/)
 
 ## Página de cadastro cliente
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/)
+![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/cadastro-cliente.jpeg/)
 ## Página de cada produto 
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/)
+![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/single-page.jpeg/)
 
+## Filtro pro categoria
+![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/filtro-por-categoria.jpeg/)
 
 ## Sistema de busca 
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/)
+![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/resultados.jpeg/)
 
 ## Carrinho de compra vazio
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/)
+![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/carrinho-vazio.jpeg/)
 
 ## Carrinho com produtos
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/)
+![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/pagina-carrinho-cheio.jpeg/)
 
 ## Orçamento 
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/)
+![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/orçamento.jpeg/)
 
 # Área do admin
 ## Login admin
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/)
+![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/login-admin.jpeg/)
 
 ## Cadastro admin
-![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/admin-cadastro.jpeg/)
 
 ## Página Inicial admin 
-![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/admin.jpeg/)
 
 ## Página categorias
-![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/admin-categorias.jpeg/)
 
-## Adicionar/atualizar novo produto
-![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/)
+## Adicionar novo produto
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/adc-produto.jpeg/)
 
-## Adicionar/atualizar novo categoria 
-![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/)
+## Atualizar produto
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/admin-atualizar-produto.jpeg/)
+
+## Adicionar novo categoria 
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/admin-adc-categoria.jpeg/)
+## Atualizar novo categoria 
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/admin-atualizar-categoria.jpeg/)
 
 
 
-# Technology used / Tecnologias usadas
+# Tecnologias usadas
 
 ## Front end
 - HTML
@@ -66,7 +76,7 @@ Projeto .....
 - Python
 - Framework Flask
 
-## Data Base / Banco de dados
+## Banco de dados
 - SQLite3
 
 

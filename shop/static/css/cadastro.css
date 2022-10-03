@@ -93,8 +93,6 @@ body{
     letter-spacing: 0.05em;
     z-index: 999;
 }
-
-
 .inputbox i{
     position: absolute;
     left: 0;
@@ -106,29 +104,6 @@ body{
     transition: 0.5s;
     pointer-events: none;
     z-index: 777;
-}
-
-.inputbox span{
-    position: absolute;
-    left: 0;
-    padding: 20px 10px 10px;
-    font-size: 1em;
-    color: grey;
-    pointer-events: none;
-    letter-spacing: 0.05em;
-    transition: 0.5s;
-}
-.inputbox input:valid ~ span,
-.inputbox input:focus ~ span
-{
-    color:rgb(131, 189, 117);
-    transform: translateX(0px) translateY(-34px);
-    font-size: 0.75em;
-}
-
-.inputbox input:valid ~ i,
-.inputbox input:focus~ i{
-    height: 44px;
 }
 
 .links{

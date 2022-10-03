@@ -1,4 +1,4 @@
-from flask import redirect, render_template, url_for, flash, request, session, current_app
+from flask import redirect, render_template, url_for, flash, request, current_app
 import secrets, os
 
 from shop import  db, app, photos, produtos, search
@@ -36,7 +36,7 @@ def get_category(id):
 
 
 
-'''------ADMIN COMANDS URLs------'''
+'''------ADMIN -  COMANDS URLs------'''
 @app.route('/addcat', methods=['GET', 'POST'])
 def addcat():
     '''if 'email' not in session:
@@ -105,8 +105,16 @@ def addproduct():
         image_2=photos.save(request.files.get('image_2'), name=secrets.token_hex(10) + '.')
         image_3=photos.save(request.files.get('image_3'), name=secrets.token_hex(10) + '.')
 
+        calorias= form.calorias.data
+        proteinas= form.proteinas.data
+        carboidrato= form.carboidrato.data
+        fibra= form.fibra.data
+        fat= form.fat.data
+        sodio= form.sodio.data
+
         addpro= AddProduct(name=name,price=price,discount=discount, stock=stock, 
-        desc=desc, category_id=category, image_1=image_1, image_2=image_2, image_3=image_3)
+        desc=desc, category_id=category, image_1=image_1, image_2=image_2, image_3=image_3, calorias=calorias,
+        proteinas=proteinas, carboidrato=carboidrato, fibra=fibra, fat=fat, sodio=sodio)
         db.session.add(addpro)
         flash(f"O produto '{name}' foi adicionado ao banco de dados.", 'success')
         db.session.commit()
@@ -130,6 +138,11 @@ def updateproduct(id):
         product.discount= form.discount.data
         product.category_id= category
         product.desc= form.discription.data
+        
+        product.calorias= form.calorias.data
+        product.proteinas= form.proteinas.data
+        product.carboidrato= form.carboidrato.data
+        product.fibra= form.fibra.data
 
         if request.files.get('image_1'):
             try:
@@ -160,6 +173,12 @@ def updateproduct(id):
     form.discount.data= product.discount
     form.stock.data= product.stock
     form.discription.data= product.desc 
+    
+    form.calorias.data= product.calorias
+    form.proteinas.data= product.proteinas
+    form.carboidrato.data= product.carboidrato
+    form.fibra.data= product.fibra 
+
     return render_template('produtos/updateproduto.html', form=form, categories=categories, product=product)
 
 @app.route('/deleteproduct/<int:id>')
@@ -180,3 +199,30 @@ def deleteproduct(id):
     db.session.commit()
     flash(f"O produto '{product.name}' foi removido do banco de dados.", 'success')
     return redirect(url_for('admin'))
+ 
+
+''''teste consumo de api externa'''
+import requests
+
+url = "https://edamam-food-and-grocery-database.p.rapidapi.com/parser"
+
+querystring = {"ingr":"apple" }
+
+res= {"hints":"nutrients"}
+
+'''label:''Apple', 'nutrients': {'ENERC_KCAL': 52.0, 'PROCNT': 0.26, 'FAT': 0.17, 'CHOCDF': 13.81, 'FIBTG': 2.4}'''
+
+headers = {
+	"X-RapidAPI-Key": "f4906a3716mshc557dfb66b7a3e0p1acf2cjsn6ededaaf0dec",
+	"X-RapidAPI-Host": "edamam-food-and-grocery-database.p.rapidapi.com"
+}
+
+responses = requests.request("GET", url, headers=headers, params=querystring)
+r= responses.json()
+
+
+@app.route('/response')
+def response():
+    return r['food']
+
+

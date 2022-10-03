@@ -19,6 +19,13 @@ class AddProduct(db.Model):
     image_2= db.Column(db.String(150),nullable=False, default='image.jpg')
     image_3= db.Column(db.String(150),nullable=False, default='image.jpg')
 
+    calorias= db.Column(db.Numeric(10,2), nullable=False) 
+    proteinas= db.Column(db.Numeric(10,2), nullable=False) 
+    carboidrato= db.Column(db.Numeric(10,2), nullable=False) 
+    fibra= db.Column(db.Numeric(10,2), nullable=False) 
+    fat= db.Column(db.Numeric(10,2), nullable=False) 
+    sodio= db.Column(db.Numeric(10,2), nullable=False) 
+
     def __repr__(self):
         return '<AddProduct %r>' % self.title
 

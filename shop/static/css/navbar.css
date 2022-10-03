@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -24,14 +26,16 @@ ul{
     text-shadow: -2px 3px 3px rgb(0, 0, 0);
     font-family: 'Inter', sans-serif;
     background: #4E944F;
+    position: fixed;
     height: 100px;
     display: flex;
     align-items: center;
     width: 100vw;
     justify-content: space-evenly;
     color: rgb(255, 255, 255);
-    z-index: 1100;
     box-shadow: 0px 2px 3px #353535;
+    margin-top: -5px;
+    z-index: 1300;
 }
 .nav-list{
     color: #ffffff;
@@ -44,7 +48,7 @@ ul{
 }
 .navbar .logo img{
     width: 130px;
-    height: 100px;
+    height: 85px;
 }
 
 /*DROPDOWN MENU*/

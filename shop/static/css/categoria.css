@@ -5,6 +5,7 @@
   scroll-behavior: smooth;
 }
 .container{
+  margin-top: 2%;
   justify-content: center;
   position: relative;
   display: inline-block;
@@ -151,8 +152,8 @@
 
 /* TÍTULO DAS PÁG*/
 .title-page h1{
-  margin-left: 35%; 
-  margin-top: 10px; 
+  margin-left: 40%; 
+  margin-top: 20px; 
   font-size: 60px; 
   text-shadow: 1px 2px 3px rgb(141, 139, 139); 
   color:#4E944F; 

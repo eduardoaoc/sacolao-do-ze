@@ -1,7 +1,14 @@
 {% block content %}
-{% include 'navbar.html' %}
+<link rel="shortcut icon" href="{{url_for('static', filename='img/logo2.png' )}}" type="image/x-icon">
 <link rel="stylesheet" href="{{url_for('static', filename='css/card.css')}}">
-
+{% include 'navbar.html' %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="container">
   {% for product in products %}
   <div class="card">
@@ -29,5 +36,4 @@
 </div>
 <br>
 <br>
-{% include 'footer.html' %}
 {% endblock content %}

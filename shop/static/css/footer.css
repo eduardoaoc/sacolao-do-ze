@@ -160,6 +160,7 @@ footer{
 
 .polices li{
     margin-top: 20px;
+    list-style: none;
 }
 
 .socials{  

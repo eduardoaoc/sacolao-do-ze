@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
 .container-single{
     font-family: 'Inter';
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 70%;
 }
 
 .left-side{
@@ -31,13 +32,48 @@
     margin-top: 5px;
     display: fleX;
     justify-content: space-evenly;
-    max-width: 400px;
+    max-width: 320px;
     gap: 10px; 
 }
 
 .imgs img{
     width: 100%;
     border-radius: 5px;
+}
+.tabela{
+    margin-left: 26%;
+    margin-bottom: 90px;
+}
+.content-table{
+    color: black;
+    font-family: 'Inter';
+    border-collapse: collapse;
+    margin: 5px 0;
+    font-size: 1em;
+    min-width: 340px;
+    border-radius: 5px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table td{
+    font-size: 18px;
+}
+.content-table th,
+.content-table td{
+    font-weight: 400;
+    padding: 10px 12px;
+}
+.content-table tbody tr{
+    border-bottom: 1px solid rgba(201, 201, 201, 0.867);
+}
+.content-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+.content-table tbody:last-of-type{
+    border-bottom: 2px solid rgb(0, 0, 0);
 }
 
 .right-side{
@@ -70,7 +106,6 @@
     background: red;
     padding: 5px 10px;
     border-radius: 10px;
-    z-index: 1250;
     box-shadow: -1px 2px 2px rgb(87, 87, 87);
 }
 .right-side p{
@@ -88,8 +123,8 @@
 .btn-adc{
     margin-top: 10px;
     font-size: 15px;
-    width: 13%;
-    padding: 10px 0px;
+    width: 15%;
+    padding: 8px 0px;
     border: none;
     border-radius: 8px;
     outline: none;
@@ -97,7 +132,7 @@
     color: #ffffff;
     background: rgb(87, 170, 89);
     cursor: pointer;
-    box-shadow: -1px 3px 3px #000000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
  }
 .btn-adc:hover{
     background: rgb(41, 153, 43);
