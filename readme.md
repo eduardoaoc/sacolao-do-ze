@@ -6,63 +6,63 @@
 Projeto .....
 
 ## Barra de navegação
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/navbar.jpg/) 
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/navbar.jpg/) 
 
 ## Barra de navegação pós login
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/navbar-login.jpg/) 
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/navbar-login.jpg/) 
 
 ## Página Inicial
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/homepage-1.jpg/) 
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/homepage-2.jpg/) 
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/homepage-1.jpg/) 
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/homepage-2.jpg/) 
 ## Conato/Rodapé
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/homepage-3.jpg/) 
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/homepage-3.jpg/) 
 
 ## Página de login do cliente
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/login-cliente.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/login-cliente.jpg/)
 
 ## Página de cadastro cliente
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/cadastro-cliente.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/cadastro-cliente.jpg/)
 ## Página de cada produto 
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/single-page.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/single-page.jpg/)
 
 ## Filtro pro categoria
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/filtro-por-categoria.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/filtro-por-categoria.jpg/)
 
 ## Sistema de busca 
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/resultados.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/resultados.jpg/)
 
 ## Carrinho de compra vazio
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/carrinho-vazio.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/carrinho-vazio.jpg/)
 
 ## Carrinho com produtos
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/pagina-carrinho-cheio.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/pagina-carrinho-cheio.jpg/)
 
 ## Orçamento 
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/orçamento.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/orçamento.jpg/)
 
 # Área do admin
 ## Login admin
-![Layout App](https://github.com/eduardoaoc/study-flask-ecommerce/blob/main/assets/login-admin.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/login-admin.jpg/)
 
 ## Cadastro admin
-![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/admin-cadastro.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/admin-cadastro.jpg/)
 
 ## Página Inicial admin 
-![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/admin.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/admin.jpg/)
 
 ## Página categorias
-![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/admin-categorias.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/admin-categorias.jpg/)
 
 ## Adicionar novo produto
-![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/adc-produto.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/adc-produto.jpg/)
 
 ## Atualizar produto
-![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/admin-atualizar-produto.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/admin-atualizar-produto.jpg/)
 
 ## Adicionar novo categoria 
-![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/admin-adc-categoria.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/admin-adc-categoria.jpg/)
 ## Atualizar novo categoria 
-![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/admin-atualizar-categoria.jpg/)
+![Layout App](https://github.com/eduardoaoc/sacolao-do-ze-ecommerce/blob/main/assets/admin-atualizar-categoria.jpg/)
 
 
 
