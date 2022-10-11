@@ -3,8 +3,11 @@
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/LICENSE) 
 
 # Sobre o projeto
-Projeto .....
-
+Foi desenvolvido nesse projeto um api utilizando a linguagem Python e  o Flask Framework, no qual
+apresenta uma pequena loja como um "Sacolão", onde tem área do cliente (área na parte que somente os 
+clientes tem acesso e pode fazer compra dos produtos presente na loja, cadastro e login), área do admin 
+(área no qual fica a parte operativa do site onde o admin pode adicionar novos produtos de manera simples
+e direta). 
 ## Barra de navegação
 ![Layout App](https://github.com/eduardoaoc/sacolao-do-ze/blob/main/assets/navbar.JPG) 
 
